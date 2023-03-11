@@ -1,0 +1,55 @@
+.intro-container {
+    display: flex;
+    gap: 10px;
+    height: 400px;
+    padding: 20px;
+    font-family: 'SF-Pro';
+    background: #1b1b1b;
+    box-shadow: #515151 30px 13px 27px -3px;
+}
+
+.intro-profile {
+    height: fit-content;
+    margin:auto;
+
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 80%;
+    gap: 10px;
+    min-height: 30px;
+}
+
+
+.intro-header {
+    text-align: left;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.intro-role {
+   color: rgba(190, 184, 184, 0.3)
+}
+
+.intro-description {
+    font-weight: normal;
+}
+
+.intro-display {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.intro-picture {
+    width: 70%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 9999;
+}
+
+

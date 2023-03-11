@@ -1,0 +1,36 @@
+.timeline-container {
+    gap: 30px;
+    width: 100%;
+    min-height: 50%;
+    max-height: 100%;
+    padding: 30px;
+    font-family: 'SF-Pro';
+    background: #1b1b1b;
+    box-shadow: #515151 30px 13px 27px -3px;
+    overflow-y: auto;
+
+}
+
+.job-card {
+    padding: 0px;
+    transition: 0.3s;
+}
+
+.job-card:hover {
+    scale: 105%;
+}
+
+.job-title,
+.job-description {
+    color: black;
+}
+
+.job-title {
+    padding: 4px;
+    background: #e2e2e2;
+}
+
+.job-location {
+    color: #414040;
+    padding: 4px;
+}
