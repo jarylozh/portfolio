@@ -2,11 +2,44 @@ import "./index.scss";
 import React, { useRef, useEffect } from "react";
 import profilePicture from "../../assets/images/profile.jpg";
 import gsap from "gsap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+
+import { Link } from "react-scroll";
 
 export const Intro = () => {
   let sectionItem = useRef(null);
+  let introHeader = useRef(null);
+  let introDescription = useRef(null);
+  let introRole = useRef(null);
+  let introProfile = useRef(null);
 
   useEffect(() => {
+    gsap.set(introHeader.current, { x: 400, opacity: 0.1 });
+    gsap.set(introRole.current, { opacity: 0, y: 400 });
+    gsap.set(introDescription.current, { opacity: 1, y: 400 });
+    gsap.set(introProfile.current, { scale: 0 });
+
+    const timeline = gsap
+      .timeline()
+      .to(introHeader.current, {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "back.easeInOut",
+      })
+      .to([introRole.current, introDescription.current], {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "back.easeInOut",
+      })
+      .to(introProfile.current, {
+        scale: 1,
+        duration: 2,
+        ease: "bounce",
+      });
+
     gsap.fromTo(
       sectionItem.current,
       {
@@ -15,7 +48,7 @@ export const Intro = () => {
       {
         opacity: 1,
         duration: 2,
-        ease: 'power4.easeOut'
+        ease: "power4.easeOut",
       }
     );
   });
@@ -25,20 +58,19 @@ export const Intro = () => {
       <div className="section-content">
         <div className="intro-container">
           <div className="intro-profile">
-            <p className="intro-header">HI, I AM JARYL</p>
-            <p className="intro-role">Software Engineer</p>
-            <p className="intro-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <p className="intro-header" ref={introHeader}>
+              HI, I AM JARYL
+            </p>
+            <p className="intro-role" ref={introRole}>
+              Software Engineer
+            </p>
+            <p className="intro-description" ref={introDescription}>
+              Currently, I'm a software engineer at ST Engineering focused on
+              building applications and services.
             </p>
           </div>
 
-          <div className="intro-display">
+          <div className="intro-display" ref={introProfile}>
             <div className="intro-picture-frame">
               <img
                 className="intro-picture"
@@ -46,6 +78,20 @@ export const Intro = () => {
                 alt="profile-picture"
               />
             </div>
+          </div>
+        </div>
+
+        <div className="chevron-indicator">
+          <div className="chevron-wrapper">
+            <Link
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+            >
+              <FontAwesomeIcon icon={faChevronDown} />
+            </Link>
           </div>
         </div>
       </div>

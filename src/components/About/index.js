@@ -10,8 +10,9 @@ export const About = () => {
 
   useEffect(() => {
     gsap.fromTo(
-      sectionItem.current, {
-        opacity: 0
+      sectionItem.current,
+      {
+        opacity: 0,
       },
       {
         opacity: 1,
@@ -20,7 +21,7 @@ export const About = () => {
           trigger: sectionItem.current,
           start: "top center",
         },
-        ease: 'power4.easeOut'
+        ease: "power4.easeOut",
       }
     );
   });
@@ -31,25 +32,25 @@ export const About = () => {
         <div className="about-container">
           <h2>ABOUT ME</h2>
           <p>
-            I'm a software engineer currently into my 2nd year at
-            <i>ST Engineering</i>. I studied at DigiPen Singapore where I
-            pursued a degree in Real Time Interactive Simulation. That was when
-            I was exposed to C++ programming and from that point on, I've...{" "}
+            I am a second-year full-stack developer at ST Engineering. Since
+            joining the company, I have been part of the product team supporting
+            the end-to-end development of a C2 framework. This project requires
+            me to not only build up my technical skills, particularly in JS and
+            Svelte. But also, to test, maintain, and launch software products
+            while liaising with multiple stakeholders in the company.
+          </p>
+          <p>
+            Prior to securing my full-time position at ST, I have been
+            programming for seven years, developing my skills in a diversity of
+            frameworks and languages. I am a keen learner who enjoys solving
+            problems and challenges.
           </p>
 
           <p>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-            quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-            eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-            qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-          </p>
-
-          <p>
-            Besides development, I do Brazillian Jiu-jitsu on the side as a
-            hobby...
+            During my journey as a software engineer, I started to cultivate an
+            interest for frontend development ranging from UI/UX to web
+            development. Also, I'm an addict for valorant, coffee and folding
+            people in $500 pyjamas(Brazillian jiu-jitsu)
           </p>
         </div>
       </div>

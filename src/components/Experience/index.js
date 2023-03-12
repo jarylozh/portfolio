@@ -55,7 +55,7 @@ export const Experience = () => {
       },
       {
         opacity: 1,
-        duration: 2,
+        duration: 1,
         ease: "power4.easeOut",
         scrollTrigger: {
           trigger: sectionItem.current,
@@ -66,35 +66,39 @@ export const Experience = () => {
   });
 
   return (
-    <div className="section" id="experience" ref={sectionItem}>
-      <div className="section-content">
-        <div className="timeline-container">
-          <h2>EXPERIENCE</h2>
-          <div className="timeline">
-            <VerticalTimeline>
-              {timelineElements.map((element) => {
-                let isWorkIcon = element.icon === "work";
+    <div ref={sectionItem} id="experience">
+      <div className="section-margin" />
+      <div className="section " >
+        <div className="section-content">
+          <div className="timeline-container">
+            <h2>EXPERIENCE</h2>
+            <div className="timeline">
+              <VerticalTimeline>
+                {timelineElements.map((element) => {
+                  let isWorkIcon = element.icon === "work";
 
-                return (
-                  <VerticalTimelineElement
-                    key={element.key}
-                    date={element.date}
-                    dateClassName="date"
-                    style={{ background: "transparent" }}
-                    iconStyle={iconStyle}
-                    icon={isWorkIcon ? <WorkIcon /> : <SchoolIcon />}
-                    className="job-card"
-                  >
-                    <h3 className="job-title">{element.title}</h3>
-                    <h5 className="job-location">{element.location}</h5>
-                    <p className="job-description">{element.description}</p>
-                  </VerticalTimelineElement>
-                );
-              })}
-            </VerticalTimeline>
+                  return (
+                    <VerticalTimelineElement
+                      key={element.key}
+                      date={element.date}
+                      dateClassName="date"
+                      style={{ background: "transparent" }}
+                      iconStyle={iconStyle}
+                      icon={isWorkIcon ? <WorkIcon /> : <SchoolIcon />}
+                      className="job-card"
+                    >
+                      <h3 className="job-title">{element.title}</h3>
+                      <h5 className="job-location">{element.location}</h5>
+                      <p className="job-description">{element.description}</p>
+                    </VerticalTimelineElement>
+                  );
+                })}
+              </VerticalTimeline>
+            </div>
           </div>
         </div>
       </div>
+      <div className="section-margin" />
     </div>
   );
 };

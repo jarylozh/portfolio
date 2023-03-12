@@ -10,7 +10,7 @@
 
 .intro-profile {
     height: fit-content;
-    margin:auto;
+    margin: auto;
 
     padding: 20px;
     display: flex;
@@ -29,10 +29,11 @@
 }
 
 .intro-role {
-   color: rgba(190, 184, 184, 0.3)
+    color: rgba(190, 184, 184, 0.3)
 }
 
 .intro-description {
+    width: 70%;
     font-weight: normal;
 }
 
@@ -46,10 +47,48 @@
 
 
 .intro-picture {
-    width: 70%;
+    width: 90%;
     height: 100%;
+    margin: auto;
     object-fit: contain;
-    z-index: 9999;
 }
 
+.section {
+    height: calc(100vh - 60px)
+}
 
+.chevron-indicator {
+    text-align: center;
+    padding: 10px;
+}
+
+.chevron-wrapper {
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    border-style: solid #1b1b1b 50%;
+    color: #1b1b1b;
+
+    animation-name: bounce;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    
+}
+
+.chevron-wrapper:hover {
+    scale: 110%;
+    cursor: pointer;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(3px);
+    }
+
+    100% {
+        transform: translateY(-3px);
+    }
+}
