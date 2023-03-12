@@ -1,18 +1,19 @@
 import "./index.scss";
-import React from "react";
-
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-
 import { ReactComponent as WorkIcon } from "../../assets/images/work.svg";
 import { ReactComponent as SchoolIcon } from "../../assets/images/school.svg";
 
-let iconStyle = { background: "#e2e2e2", border: "solid #1b1b1b" };
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
-let timelineElements = [
+const iconStyle = { background: "#e2e2e2", border: "solid #1b1b1b" };
+const timelineElements = [
   {
     id: 1,
     title: "Software Engineer",
@@ -41,12 +42,31 @@ let timelineElements = [
     icon: "school",
     date: "April 2017 - April 2021",
   },
- 
 ];
 
 export const Experience = () => {
+  let sectionItem = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      sectionItem.current,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 2,
+        ease: "power4.easeOut",
+        scrollTrigger: {
+          trigger: sectionItem.current,
+          start: "top center",
+        },
+      }
+    );
+  });
+
   return (
-    <div className="section" id="experience">
+    <div className="section" id="experience" ref={sectionItem}>
       <div className="section-content">
         <div className="timeline-container">
           <h2>EXPERIENCE</h2>

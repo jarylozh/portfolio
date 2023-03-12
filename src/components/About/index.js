@@ -1,10 +1,32 @@
 import "./index.scss";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export const About = () => {
+  let sectionItem = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      sectionItem.current, {
+        opacity: 0
+      },
+      {
+        opacity: 1,
+        duration: 2,
+        scrollTrigger: {
+          trigger: sectionItem.current,
+          start: "top center",
+        },
+        ease: 'power4.easeOut'
+      }
+    );
+  });
+
   return (
-    <div className="section" id="about">
+    <div className="section" id="about" ref={sectionItem}>
       <div className="section-content">
         <div className="about-container">
           <h2>ABOUT ME</h2>
@@ -31,8 +53,6 @@ export const About = () => {
           </p>
         </div>
       </div>
-
-      
     </div>
   );
 };
