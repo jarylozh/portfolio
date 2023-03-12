@@ -24,12 +24,12 @@
 .intro-header {
     text-align: left;
     color: white;
-    font-size: 50px;
+    font-size: 80px;
     font-weight: bold;
 }
 
 .intro-role {
-    color: rgba(190, 184, 184, 0.3)
+    color: rgb(168, 166, 166)
 }
 
 .intro-description {
@@ -54,7 +54,7 @@
 }
 
 .section {
-    height: calc(100vh - 60px)
+    height: calc(100vh + 60px)
 }
 
 .chevron-indicator {

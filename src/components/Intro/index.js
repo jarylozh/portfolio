@@ -13,12 +13,14 @@ export const Intro = () => {
   let introDescription = useRef(null);
   let introRole = useRef(null);
   let introProfile = useRef(null);
+  let introChevron = useRef(null);
 
   useEffect(() => {
     gsap.set(introHeader.current, { x: 400, opacity: 0.1 });
     gsap.set(introRole.current, { opacity: 0, y: 400 });
     gsap.set(introDescription.current, { opacity: 1, y: 400 });
     gsap.set(introProfile.current, { scale: 0 });
+    gsap.set(introChevron.current, { y: 100, opacity: 0 });
 
     const timeline = gsap
       .timeline()
@@ -38,6 +40,12 @@ export const Intro = () => {
         scale: 1,
         duration: 2,
         ease: "bounce",
+      })
+      .to(introChevron.current, {
+        opacity: 1,
+        x: -100,
+        duration: 2,
+        ease: "back.easeInOut ",
       });
 
     gsap.fromTo(
@@ -61,9 +69,9 @@ export const Intro = () => {
             <p className="intro-header" ref={introHeader}>
               HI, I AM JARYL
             </p>
-            <p className="intro-role" ref={introRole}>
+            <span className="intro-role" ref={introRole}>
               Software Engineer
-            </p>
+            </span>
             <p className="intro-description" ref={introDescription}>
               Currently, I'm a software engineer at ST Engineering focused on
               building applications and services.
@@ -82,7 +90,7 @@ export const Intro = () => {
         </div>
 
         <div className="chevron-indicator">
-          <div className="chevron-wrapper">
+          <div className="chevron-wrapper" ref={introChevron}>
             <Link
               to="about"
               spy={true}
