@@ -1,69 +1,92 @@
 $primary-color: #ffd700;
 
-@import 'animate.css';
+@import "animate.css";
 
 @font-face {
-    font-family: 'Helvetica Neue';
-    src: url('./assets/fonts/helvetica-neu.ttf') format('ttf');
+  font-family: "Helvetica Neue";
+  src: url("./assets/fonts/helvetica-neu.ttf") format("ttf");
 }
 
 @font-face {
-    font-family: 'La Belle Aurore';
-    src: url('./assets/fonts/LaBelleAurore.woff2') format('ttf');
-}
-
-
-@font-face {
-    font-family: 'Coolvetica';
-    src: url('./assets/fonts/CoolveticaRg-Regular.woff2') format('ttf');
+  font-family: "La Belle Aurore";
+  src: url("./assets/fonts/LaBelleAurore.woff2") format("ttf");
 }
 
 @font-face {
-    font-family: 'SF-Pro';
-    src: url('./assets/fonts/sfpro-regular.OTF') format('opentype');
+  font-family: "Coolvetica";
+  src: url("./assets/fonts/CoolveticaRg-Regular.woff2") format("ttf");
+}
+
+@font-face {
+  font-family: "SF-Pro";
+  src: url("./assets/fonts/sfpro-regular.OTF") format("opentype");
 }
 
 .layout {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100vh;
 }
-
 body {
-    width: 100vw;
-    height: 100vh;
-    background: #e1e1e1;
+  --container-color: #1d1d1d;
+  --font-color: rgb(230, 230, 230);
+  --container-height: 400px;
+  width: 100vw;
+  height: 100vh;
+  background: #e1e1e1;
+  font-family: "SF-Pro";
+  font-size: 16px;
 }
 
-input,
-textarea {
-    font-family: 'SF-Pro';
+.title {
+  height: 10%;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
-.section {
-    width: 50%;
-    height: 100vh;
-    padding: 20px;
-    margin: auto;
-    display: flex;
-    justify-items: center;
-    color: #e2e2e2;
-    position: relative;
+h1 {
+  font-size: 60px;
 }
 
-.section-content {
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 100%;
+.chevron-wrapper {
+  position: absolute;
+  color: var(--container-color);
+  left: 50%;
+  bottom: 10%;
+  font-size: larger;
+
+  animation-name: bounce;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
 }
 
-h2 {
-    font-size: 50px;
-    text-transform: capitalize;
+.chevron-wrapper:hover {
+  scale: 110%;
+  cursor: pointer;
 }
 
-html {
-    overflow-x: hidden;
+section {
+  width: 100%;
+  height: 100%;
 }
 
+@keyframes bounce {
+  0% {
+    transform: translateY(5px);
+  }
 
+  100% {
+    transform: translateY(-3px);
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  h1 {
+    font-size: 30px;
+  }
+  body {
+    font-size: 13px;
+  }
+}
 

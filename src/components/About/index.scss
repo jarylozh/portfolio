@@ -1,18 +1,33 @@
-
-
 .about-container {
-    gap: 30px;
-    width: 100%;
-    height: 400px;
-    padding: 30px;
-    font-family: 'SF-Pro';
-    background: #1b1b1b;
-    box-shadow: #515151 30px 13px 27px -3px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    gap: 10;
+  display: flex;
+  height: 100%;
 }
 
+//The black box
+.about-content {
+  width: 100%;
+  height: var(--container-height);
+  background: var(--container-color);
+  padding: 20px;
+  margin: auto;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
 
+.description {
+  margin-top: auto; 
+  margin-bottom: auto;
+  width: 70%;
+}
 
+p {
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 768px)  {
+  .about-content {
+    
+  }
+}

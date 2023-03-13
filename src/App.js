@@ -1,9 +1,16 @@
 import "./App.scss";
+import { Intro } from "./components/Intro";
 
-import Layout from "./components/Layout/index";
-
+import { Navbar } from "./components/Navbar";
+import { About } from "./components/About";
+import { Experience } from "./components/Experience";
 function App() {
-  return <Layout />;
+  return (
+    <div className='layout'>
+      <Navbar />
+      <Intro />
+    </div>
+  )
 }
 
 export default App;
