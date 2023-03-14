@@ -1,33 +1,45 @@
 .about-container {
+  width: 100%;
   display: flex;
+  padding-top: 10px;
+  flex-direction: column;
   height: 100%;
+  justify-content: center;
+  gap: 10px;
 }
 
-//The black box
 .about-content {
-  width: 100%;
-  height: var(--container-height);
-  background: var(--container-color);
-  padding: 20px;
-  margin: auto;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  width: var(--layout-width);
+  height: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  
 }
 
 .description {
   margin-top: auto; 
   margin-bottom: auto;
-  width: 70%;
+  width: 100%;
 }
 
 p {
-  margin-bottom: 20px;
+  padding-top: 10px;
 }
 
-@media only screen and (max-width: 768px)  {
+@media screen and (max-width: 768px) {
   .about-content {
-    
+    width: 70%;
+    height: 60%;
+    text-align: center;
+    flex-direction: column-reverse;
+    gap: 50px;
   }
+
+  img {
+    height: 200px;
+    width: 200px;
+  }
+ 
+
 }

@@ -1,22 +1,5 @@
 $primary-color: #ffd700;
 
-@import "animate.css";
-
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("./assets/fonts/helvetica-neu.ttf") format("ttf");
-}
-
-@font-face {
-  font-family: "La Belle Aurore";
-  src: url("./assets/fonts/LaBelleAurore.woff2") format("ttf");
-}
-
-@font-face {
-  font-family: "Coolvetica";
-  src: url("./assets/fonts/CoolveticaRg-Regular.woff2") format("ttf");
-}
-
 @font-face {
   font-family: "SF-Pro";
   src: url("./assets/fonts/sfpro-regular.OTF") format("opentype");
@@ -30,11 +13,13 @@ body {
   --container-color: #1d1d1d;
   --font-color: rgb(230, 230, 230);
   --container-height: 400px;
+  --layout-width: 60%;
   width: 100vw;
   height: 100vh;
-  background: #e1e1e1;
-  font-family: "SF-Pro";
+
+  font-family: 'DM Sans', sans-serif;
   font-size: 16px;
+  font-weight: 400;
 }
 
 .title {
@@ -45,25 +30,6 @@ body {
 
 h1 {
   font-size: 60px;
-}
-
-.chevron-wrapper {
-  position: absolute;
-  color: var(--container-color);
-  left: 50%;
-  bottom: 10%;
-  font-size: larger;
-
-  animation-name: bounce;
-  animation-duration: 0.5s;
-  animation-timing-function: ease-out;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-}
-
-.chevron-wrapper:hover {
-  scale: 110%;
-  cursor: pointer;
 }
 
 section {

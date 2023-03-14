@@ -2,29 +2,37 @@ import "./index.scss";
 import React, { useRef, useEffect } from "react";
 import profilePicture from "../../assets/images/profile.jpg";
 import gsap from "gsap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import Arrow from "../Arrow/index";
 
-import { Link } from "react-scroll";
-import Section from "../Section/index"
+
 export const Intro = () => {
+  
+  useEffect(()=> {
+    
+  })
+  
+
   return (
     <section id='intro'>  
       <div className='intro-container'>
-      <div className="intro-content">    
-        <h3><i></i>HELLO, I'M JARYL</h3>
-        <span className="intro-role" >
-              Software Engineer
-             </span>
-             <p className="intro-description" >
-               Currently, I'm a software engineer at ST Engineering focused on
-              building applications and services.
-            </p>
+      
+      <div className="intro-content">
+        <div className='intro-text'> <h3>HELLO, I'M JARYL</h3>
+        <span style={{color: '#DDD0C8'}}> 
+            Software Engineer
+        </span>
+        <p className="intro-description">
+          Currently, I'm a software engineer at ST Engineering focused on building applications and services 
+        </p></div>
+       <div className="intro-picture">
+       <img  src={profilePicture} alt="profile-picture"/>
+       </div>
      </div>
-      </div>
-     </section>
+     <div style={{textAlign: 'center', padding: 'auto'}}><Arrow to='about'/></div>
+    </div> 
    
-    
+  </section> 
+  
  );
 }
 // export const Intro = () => {

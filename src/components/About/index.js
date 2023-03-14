@@ -1,14 +1,15 @@
 import "./index.scss";
 import React, { useEffect, useRef } from "react";
-import Section from '../Section/index'
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Arrow from "../Arrow/index";
 gsap.registerPlugin(ScrollTrigger);
 
 export const About = () => {
   return (
-    <Section id='about'>
+    <section id='about'>
       <div className='about-container'>
+        <div style={{ textAlign: 'center', padding: 'auto' }}><Arrow to='intro' isUp={true} /></div>
         <div className="about-content">
           <h2 className='title'>ABOUT ME</h2>
           <div className='description'>
@@ -33,11 +34,12 @@ export const About = () => {
               development. Also, I'm an addict for valorant, coffee and folding
               people in $500 pyjamas(Brazillian jiu-jitsu)
             </p>
-          </div>
 
+          </div>
         </div>
+        <div style={{ textAlign: 'center', padding: 'auto' }}><Arrow to='experience' /></div>
       </div>
-    </Section>
+    </section>
   )
 }
 
