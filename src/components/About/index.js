@@ -26,17 +26,16 @@ const languages = [
     icon: css
   },
   {
-    label: 'c++',
-    icon: cplusplus
-  },
-  {
     label: 'typescript',
     icon: typescript
   },
   {
     label: 'javascript',
     icon: js
-  }
+  }, {
+    label: 'c++',
+    icon: cplusplus
+  },
 ];
 
 export const About = () => {
@@ -67,11 +66,14 @@ export const About = () => {
 
           </div>
           <div className="stack-content">
+
+            <p className='subheader'>SKILLS</p>
             <div className="grid-container">
               {languages.map(i => {
                 return (
                   <div className="square">
                     <img src={i.icon} alt={i.label} />
+                    <p className='label'>{i.label}</p>
                   </div>
                 )
               })}
