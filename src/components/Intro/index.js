@@ -7,10 +7,7 @@ import Arrow from "../Arrow/index";
 
 export const Intro = () => {
   
-  useEffect(()=> {
-    
-  })
-  
+
 
   return (
     <section id='intro'>  
@@ -25,7 +22,7 @@ export const Intro = () => {
           Currently, I'm a software engineer at ST Engineering focused on building applications and services 
         </p></div>
        <div className="intro-picture">
-       <img  src={profilePicture} alt="profile-picture"/>
+       <img src={profilePicture} alt="profile-picture"/>
        </div>
      </div>
      <div style={{textAlign: 'center', padding: 'auto'}}><Arrow to='about'/></div>
