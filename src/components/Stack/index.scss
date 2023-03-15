@@ -1,0 +1,23 @@
+.stack-container {
+  width: 100%;
+  border: solid 1px;
+  height: 100%;
+  padding: 1rem;
+}
+
+.stack-content {
+  width: 50%;
+  height: 80%;
+}
+
+.stack-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  background: grey;
+}
+
+.thumbnail {
+  width: 60px;
+  aspect-ratio: 1;
+}
+

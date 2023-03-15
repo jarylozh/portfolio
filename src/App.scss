@@ -1,69 +1,10 @@
 $primary-color: #ffd700;
 
-@import 'animate.css';
-
 @font-face {
-    font-family: 'Helvetica Neue';
-    src: url('./assets/fonts/helvetica-neu.ttf') format('ttf');
+  font-family: "SF-Pro";
+  src: url("./assets/fonts/sfpro-regular.OTF") format("opentype");
 }
 
-@font-face {
-    font-family: 'La Belle Aurore';
-    src: url('./assets/fonts/LaBelleAurore.woff2') format('ttf');
-}
-
-
-@font-face {
-    font-family: 'Coolvetica';
-    src: url('./assets/fonts/CoolveticaRg-Regular.woff2') format('ttf');
-}
-
-@font-face {
-    font-family: 'SF-Pro';
-    src: url('./assets/fonts/sfpro-regular.OTF') format('opentype');
-}
-
-.layout {
-    width: 100%;
-    height: 100%;
-}
-
-body {
-    width: 100vw;
-    height: 100vh;
-    background: #e1e1e1;
-}
-
-input,
-textarea {
-    font-family: 'SF-Pro';
-}
-
-.section {
-    width: 50%;
-    height: 100vh;
-    padding: 20px;
-    margin: auto;
-    display: flex;
-    justify-items: center;
-    color: #e2e2e2;
-    position: relative;
-}
-
-.section-content {
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 100%;
-}
-
-h2 {
-    font-size: 50px;
-    text-transform: capitalize;
-}
-
-html {
-    overflow-x: hidden;
-}
-
-
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

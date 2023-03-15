@@ -10,9 +10,12 @@ import { ReactComponent as SchoolIcon } from "../../assets/images/school.svg";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import Section from '../Section/index'
+
 gsap.registerPlugin(ScrollTrigger);
 
-const iconStyle = { background: "#e2e2e2", border: "solid #1b1b1b" };
+const iconStyle = { background: "#ffffff", border: "solid #1b1b1b" };
 const timelineElements = [
   {
     id: 1,
@@ -66,39 +69,35 @@ export const Experience = () => {
   });
 
   return (
-    <div ref={sectionItem} id="experience">
-      <div className="section-margin" />
-      <div className="section " >
-        <div className="section-content">
-          <div className="timeline-container">
-            <h2>EXPERIENCE</h2>
-            <div className="timeline">
-              <VerticalTimeline>
-                {timelineElements.map((element) => {
-                  let isWorkIcon = element.icon === "work";
+    <Section id='experience'>
+      <div className="timeline-container">
 
-                  return (
-                    <VerticalTimelineElement
-                      key={element.key}
-                      date={element.date}
-                      dateClassName="date"
-                      style={{ background: "transparent" }}
-                      iconStyle={iconStyle}
-                      icon={isWorkIcon ? <WorkIcon /> : <SchoolIcon />}
-                      className="job-card"
-                    >
-                      <h3 className="job-title">{element.title}</h3>
-                      <h5 className="job-location">{element.location}</h5>
-                      <p className="job-description">{element.description}</p>
-                    </VerticalTimelineElement>
-                  );
-                })}
-              </VerticalTimeline>
-            </div>
-          </div>
+        <div className="timeline-content">
+          <h2 className='title'>EXPERIENCE</h2>
         </div>
       </div>
-      <div className="section-margin" />
-    </div>
+    </Section>
   );
 };
+
+
+<VerticalTimeline >
+  {timelineElements.map((element) => {
+    let isWorkIcon = element.icon === "work";
+    const myStyle = { background: "transparent" }
+    return (
+      <VerticalTimelineElement
+        key={element.key}
+        date={element.date}
+        dateClassName="date"
+        iconStyle={iconStyle}
+        icon={isWorkIcon ? <WorkIcon /> : <SchoolIcon />}
+        className="job-card"
+      >
+        <h3 className="job-title">{element.title}</h3>
+        <h5 className="job-location">{element.location}</h5>
+        <p className="job-description">{element.description}</p>
+      </VerticalTimelineElement>
+    );
+  })}
+</VerticalTimeline>

@@ -1,0 +1,25 @@
+.arrow {
+  color: var(blue);
+  font-size: larger;
+  animation-name: bounce;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+
+}
+
+.arrow:hover {
+  cursor: pointer;
+}
+
+
+@keyframes bounce {
+  0% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    transform: translateY(-3px);
+  }
+}

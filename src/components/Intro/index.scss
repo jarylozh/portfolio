@@ -1,94 +1,79 @@
 .intro-container {
-    display: flex;
-    gap: 10px;
-    height: 400px;
-    padding: 20px;
-    font-family: 'SF-Pro';
-    background: #1b1b1b;
-    box-shadow: #515151 30px 13px 27px -3px;
+  width: 100%;
+  display: flex;
+  padding-top: 10px;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  gap: 10px;
 }
 
-.intro-profile {
-    height: fit-content;
-    margin: auto;
-
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    flex-basis: 80%;
-    gap: 10px;
-    min-height: 30px;
+.intro-content {
+  width: var(--layout-width);
+  height: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
 }
 
-
-.intro-header {
-    text-align: left;
-    color: white;
-    font-size: 80px;
-    font-weight: bold;
+.intro-text {
+  padding: 10px;
+  height: 80%;
 }
 
-.intro-role {
-    color: rgb(168, 166, 166)
+h3 {
+  font-size: 40px;
+  letter-spacing: 2.5px;
 }
 
-.intro-description {
-    width: 70%;
-    font-weight: normal;
+.intro-text {
+  flex-grow: 3;
+  height: auto;
 }
-
-.intro-display {
-    width: 40%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 
 .intro-picture {
-    width: 90%;
-    height: 100%;
-    margin: auto;
-    object-fit: contain;
+  width: 30%;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.section {
-    height: calc(100vh + 60px)
+.intro-picture > img {
+  width: 80%;
+  min-height: 50%;
+  aspect-ratio: 1 / 1;
+  min-width: 150px;
 }
 
-.chevron-indicator {
+
+
+@media screen and (max-width: 768px) {
+  .intro-content {
+    width: 30%;
+    height: 80%;
     text-align: center;
-    padding: 10px;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  .intro-text {
+    flex-grow: 0;
+  }
+
+  img {
+    min-width: 200px;
+  }
 }
 
-.chevron-wrapper {
-    padding: 10px;
-    width: 30px;
-    height: 30px;
-    margin: auto;
-    border-style: solid #1b1b1b 50%;
-    color: #1b1b1b;
-
-    animation-name: bounce;
-    animation-duration: 0.8s;
-    animation-timing-function: ease-out;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-    
-}
-
-.chevron-wrapper:hover {
-    scale: 110%;
-    cursor: pointer;
-}
-
-@keyframes bounce {
-    0% {
-        transform: translateY(3px);
-    }
-
-    100% {
-        transform: translateY(-3px);
-    }
+@media screen and (max-height: 412px) {
+  .intro-content {
+    width: 80%;
+    height: 60%;
+    gap: 10px;
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+  }
 }

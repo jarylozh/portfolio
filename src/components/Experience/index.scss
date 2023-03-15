@@ -1,42 +1,40 @@
 .timeline-container {
-    gap: 30px;
-    width: 100%;
-    min-height: 50%;
-    max-height: 100%;
-    padding: 30px;
-    font-family: 'SF-Pro';
-    background: #1b1b1b;
-    box-shadow: #515151 30px 13px 27px -3px;
-    overflow-y: auto;
-    border-radius: 5px;
-
+  display: flex;
+  height: 100%;
 }
 
-.section-margin {
-    width: 100%;
-    height: 400px;
+//The black box
+.timeline-content {
+  width: 100%;
+  height: var(--container-height);
+  padding: 20px;
+  margin: auto;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  background: var(--container-color);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .job-card {
-    padding: 0px;
-    transition: 0.3s;
+
 }
 
 .job-card:hover {
-    scale: 105%;
+  scale: 105%;
 }
 
 .job-title,
 .job-description {
-    color: black;
+  color: black;
 }
 
 .job-title {
-    padding: 4px;
-    background: #e2e2e2;
+  padding: 4px;
+  background: #e2e2e2;
 }
 
 .job-location {
-    color: #414040;
-    padding: 4px;
+  color: #414040;
+  padding: 4px;
 }
