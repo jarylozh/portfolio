@@ -42,10 +42,12 @@ const languages = [
 
 export const About = () => {
   const gridContainerStyle = "grid grid-cols-2 w-1/2 sm:w-full sm:flex gap-4 items-center "
+
+  
   return (
-    <section className='bg-primary text-on-primary w-full h-screen p-10 sm:p-0 lg:h-full skew-y-0 lg:skew-y-6' id='about'>
+    <section className='bg-primary text-on-primary w-full h-[1000px] p-10 sm:p-0 lg:h-full skew-y-0 lg:skew-y-6' id='about'>
       <div className='w-full h-full flex flex-col justify-center items-center '>
-        <div className=" w-4/5 sm:w-1/2 h-full sm:h-1/2 text-center skew-y-0 sm:text-left lg:-skew-y-6 m-4 sm:m-auto flex flex-col justify-center items-center">
+        <div className=" w-11/12 lg:w-1/2 h-full sm:h-1/2 text-center skew-y-0 sm:text-left lg:-skew-y-6 m-4 sm:m-auto flex flex-col justify-center items-center">
           <h2 className="font-bold text-2xl">ABOUT ME</h2>
           <p>
             I am a second-year full-stack developer at ST Engineering. Since
