@@ -13,7 +13,7 @@ import portfolioSvg from "../../assets/images/social/portfolio.svg"
 
 
 export const Intro = () => {
-  const buttonStyle = ' p-0.5 px-2 font-semibold border-2 border-black text-sm hover:bg-primary hover:text-on-primary transition ease-in-out duration-300 fill-red-200';
+  const buttonStyle = ' p-0.5 px-2 font-semibold border-2 border-black text-sm hover:bg-primary hover:text-on-primary transition ease-in-out duration-300';
   const navButtonStyle = 'w-8 h-8 text-sm p-1 sm:text-3xl text-center flex items-center justify-center'
   return (
 
