@@ -1,44 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Arrow from "../Arrow/index";
-
-import html from "../../assets/images/html5.svg";
-import css from "../../assets/images/css.svg";
-import cplusplus from "../../assets/images/c++.svg";
-import react from "../../assets/images/react.svg";
-import typescript from "../../assets/images/typescript.svg";
-import js from "../../assets/images/js.svg";
-
-import Stack from "../Stack/index";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const languages = [
-  {
-    id: 1,
-    label: "HTML5",
-    icon: html,
-  },
-  {
-    label: "CSS3",
-    icon: css,
-  },
-  {
-    label: "Typescript",
-    icon: typescript,
-    style: { scale: "85%" },
-  },
-  {
-    label: "Javascript",
-    icon: js,
-    style: { scale: "85%" },
-  },
-  {
-    label: "C++",
-    icon: cplusplus,
-  },
-];
 
 const skills = [
   "HTML5",
@@ -53,12 +17,9 @@ const skills = [
 const frameworks = ["Svelte", "React", "Flutter", "Hasura", "ThreeJS"];
 
 export const About = () => {
-  const gridContainerStyle =
-    "grid grid-cols-2 w-1/2 sm:w-full sm:flex gap-4 items-center ";
-
   return (
     <section
-      className="bg-primary text-on-primary w-full h-[1100px]  sm:p-0 lg:h-full skew-y-0 lg:skew-y-6"
+      className="bg-primary text-on-primary w-full h-[900px] sm:p-0 lg:h-4/5 skew-y-0 lg:skew-y-6"
       id="about"
     >
       <div className="w-full h-full flex justify-center items-center lg:text-xl text-normal">
