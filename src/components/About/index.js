@@ -20,7 +20,7 @@ export const About = () => {
   let section = useRef(null);
   const timeline = useRef(gsap.timeline());
   useEffect(() => {
-    gsap.set(section.current, {opacity: 0, x: -40});
+    gsap.set(section.current, { opacity: 0, x: -40 });
     gsap.to(section.current, {
       x: 0,
       opacity: 1,
@@ -28,26 +28,30 @@ export const About = () => {
       ease: "power3.easeIn",
       scrollTrigger: {
         trigger: section.current,
-        start: "top center"
-      }
-    })
+        start: "top center",
+      },
+    });
   });
 
   return (
     <section
-      
-      className="bg-primary text-on-primary w-full h-full py-6  sm:p-0  skew-y-0 lg:skew-y-6 2xl:h-[1100px]"
+      className="bg-primary text-on-primary w-full h-[1000px]  py-6  sm:p-0  skew-y-0 lg:skew-y-6 2xl:h-[1100px]"
       id="about"
     >
-      <div className="w-full h-full flex justify-center items-center lg:text-xl text-normal" ref={section}>
+      <div
+        className="w-full h-full flex justify-center items-center lg:text-xl text-normal"
+        ref={section}
+      >
         <div className=" w-full h-full  sm:h-3/5 text-center skew-y-0 sm:text-left lg:-skew-y-6  sm:m-auto flex flex-col justify-center items-center ">
           <h2 className="font-bold text-3xl sm:text-5xl text-center ">
             ABOUT ME
           </h2>
 
-          <div className="flex sm:flex-row flex-col w-4/5  gap-4 text-sm sm:text-sm 2xl:text-xl">
+          <div className="flex sm:flex-row flex-col w-4/5  gap-4 text-sm sm:text-sm 2xl:text-xl mt-10">
             <div className="w-full p-4 h-full ">
-              <h2 className="font-bold text-xl sm:text-2xl 2xl:text-5xl">HELLO THERE,</h2>
+              <h2 className="font-bold text-2xl sm:text-3xl 2xl:text-5xl">
+                HELLO THERE,
+              </h2>
               <p>
                 I am a second-year full-stack developer at ST Engineering. Since
                 joining the company, I have been part of the product team
@@ -57,12 +61,12 @@ export const About = () => {
                 launch software products while liaising with multiple
                 stakeholders in the company.
               </p>
-              <p className="mt-2">
+              {/* <p className="mt-2">
                 Prior to securing my full-time position at ST, I have been
                 programming for seven years, developing my skills in a diversity
                 of frameworks and languages. I am a keen learner who enjoys
                 solving problems and challenges.
-              </p>
+              </p> */}
 
               <p className="mt-2">
                 During my journey as a software engineer, I started to cultivate
@@ -76,7 +80,9 @@ export const About = () => {
               id="skill-container"
               className="w-full h-full flex flex-col justify-center sm:justify-start items-center gap-2 "
             >
-              <h2 className="font-bold text-xl sm:text-2xl ">SKILLS</h2>
+              <h2 className="font-bold text-2xl sm:text-3xl 2xl:text-5xl ">
+                SKILLS
+              </h2>
               <p className="border-b-2 w-3/4 text-left sm:w-1/2 text-sm ">
                 Languages
               </p>
