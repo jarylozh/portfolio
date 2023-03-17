@@ -58,17 +58,19 @@ export const About = () => {
 
   return (
     <section
-      className="bg-primary text-on-primary w-full h-[1000px] p-10 sm:p-0 lg:h-full skew-y-0 lg:skew-y-6"
+      className="bg-primary text-on-primary w-full h-[1100px]  sm:p-0 lg:h-full skew-y-0 lg:skew-y-6"
       id="about"
     >
       <div className="w-full h-full flex justify-center items-center lg:text-xl text-normal">
-        <div className=" w-11/12 lg:w-3/4  sm:h-3/5 text-center skew-y-0 sm:text-left lg:-skew-y-6 m-4 sm:m-auto flex flex-col justify-center items-center ">
-          <h2 className="font-bold text-5xl text-center ">ABOUT ME</h2>
+        <div className=" w-full h-11/12  sm:h-3/5 text-center skew-y-0 sm:text-left lg:-skew-y-6  sm:m-auto flex flex-col justify-center items-center ">
+          <h2 className="font-bold text-3xl sm:text-5xl text-center ">
+            ABOUT ME
+          </h2>
 
-          <div className="flex sm:flex-row flex-col w-4/5 h-full gap-4 ">
+          <div className="flex sm:flex-row flex-col w-4/5 h-full gap-4 text-sm sm:text-sm ">
             <div className="w-full p-4 h-full ">
-              <h2 className="font-bold text-2xl ">HELLO THERE,</h2>
-              {/* <p>
+              <h2 className="font-bold text-xl sm:text-2xl ">HELLO THERE,</h2>
+              <p>
                 I am a second-year full-stack developer at ST Engineering. Since
                 joining the company, I have been part of the product team
                 supporting the end-to-end development of a C2 framework. This
@@ -76,15 +78,15 @@ export const About = () => {
                 particularly in JS and Svelte. But also, to test, maintain, and
                 launch software products while liaising with multiple
                 stakeholders in the company.
-              </p> */}
-              <p className="">
+              </p> 
+              <p className="mt-2">
                 Prior to securing my full-time position at ST, I have been
                 programming for seven years, developing my skills in a diversity
                 of frameworks and languages. I am a keen learner who enjoys
                 solving problems and challenges.
               </p>
 
-              <p>
+              <p className="mt-2">
                 During my journey as a software engineer, I started to cultivate
                 an interest for frontend development ranging from UI/UX to web
                 development. Also, I'm an addict for valorant, coffee and
@@ -94,14 +96,14 @@ export const About = () => {
 
             <div
               id="skill-container"
-              className=" p-4 w-full h-full flex flex-col justify-center sm:justify-start items-center gap-2 "
+              className="w-full h-full flex flex-col justify-center sm:justify-start items-center gap-2 "
             >
-              <h2 className="font-bold text-2xl">SKILLS</h2>
+               <h2 className="font-bold text-xl sm:text-2xl ">SKILLS</h2>
               <p className="border-b-2 w-3/4 text-left sm:w-1/2 text-sm ">
                 Languages
               </p>
 
-              <div className="h-3/4 flex  w-3/4 sm:w-1/2 flex-row flex-wrap gap-1 ">
+              <div className="h-fit flex w-3/4 sm:w-1/2 flex-row flex-wrap gap-1">
                 {skills.map((skill) => {
                   return (
                     <div className="flex h-fit w-fit px-2 py-0.5 border-2 border-gray-200">
@@ -117,7 +119,7 @@ export const About = () => {
                 Frameworks
               </p>
 
-              <div className="h-1/2 flex  w-3/4 sm:w-1/2 flex-row flex-wrap gap-1 ">
+              <div className="h-fit flex  w-3/4 sm:w-1/2 flex-row flex-wrap gap-1 ">
                 {frameworks.map((skill) => {
                   return (
                     <div className="flex h-fit w-fit px-2 py-0.5 border-2 border-gray-200">
@@ -128,8 +130,6 @@ export const About = () => {
                   );
                 })}
               </div>
-
-             
             </div>
           </div>
         </div>
