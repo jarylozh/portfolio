@@ -36,16 +36,16 @@ export const About = () => {
   return (
     <section
       
-      className="bg-primary text-on-primary w-full h-fit py-6  sm:p-0 lg:h-4/5 skew-y-0 lg:skew-y-6 2xl:h-[1100px]"
+      className="bg-primary text-on-primary w-full h-full py-6  sm:p-0  skew-y-0 lg:skew-y-6 2xl:h-[1100px]"
       id="about"
     >
       <div className="w-full h-full flex justify-center items-center lg:text-xl text-normal" ref={section}>
-        <div className=" w-full h-11/12  sm:h-3/5 text-center skew-y-0 sm:text-left lg:-skew-y-6  sm:m-auto flex flex-col justify-center items-center ">
+        <div className=" w-full h-full  sm:h-3/5 text-center skew-y-0 sm:text-left lg:-skew-y-6  sm:m-auto flex flex-col justify-center items-center ">
           <h2 className="font-bold text-3xl sm:text-5xl text-center ">
             ABOUT ME
           </h2>
 
-          <div className="flex sm:flex-row flex-col w-4/5 h-full gap-4 text-sm sm:text-sm 2xl:text-xl">
+          <div className="flex sm:flex-row flex-col w-4/5  gap-4 text-sm sm:text-sm 2xl:text-xl">
             <div className="w-full p-4 h-full ">
               <h2 className="font-bold text-xl sm:text-2xl 2xl:text-5xl">HELLO THERE,</h2>
               <p>
