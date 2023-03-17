@@ -17,12 +17,29 @@ const skills = [
 const frameworks = ["Svelte", "React", "Flutter", "Hasura", "ThreeJS"];
 
 export const About = () => {
+  let section = useRef(null);
+  const timeline = useRef(gsap.timeline());
+  useEffect(() => {
+    gsap.set(section.current, {opacity: 0, x: -40});
+    gsap.to(section.current, {
+      x: 0,
+      opacity: 1,
+      duration: 1.5,
+      ease: "power3.easeIn",
+      scrollTrigger: {
+        trigger: section.current,
+        start: "top center"
+      }
+    })
+  });
+
   return (
     <section
+      
       className="bg-primary text-on-primary w-full h-[900px] sm:p-0 lg:h-4/5 skew-y-0 lg:skew-y-6"
       id="about"
     >
-      <div className="w-full h-full flex justify-center items-center lg:text-xl text-normal">
+      <div className="w-full h-full flex justify-center items-center lg:text-xl text-normal" ref={section}>
         <div className=" w-full h-11/12  sm:h-3/5 text-center skew-y-0 sm:text-left lg:-skew-y-6  sm:m-auto flex flex-col justify-center items-center ">
           <h2 className="font-bold text-3xl sm:text-5xl text-center ">
             ABOUT ME
@@ -39,7 +56,7 @@ export const About = () => {
                 particularly in JS and Svelte. But also, to test, maintain, and
                 launch software products while liaising with multiple
                 stakeholders in the company.
-              </p> 
+              </p>
               <p className="mt-2">
                 Prior to securing my full-time position at ST, I have been
                 programming for seven years, developing my skills in a diversity
@@ -59,7 +76,7 @@ export const About = () => {
               id="skill-container"
               className="w-full h-full flex flex-col justify-center sm:justify-start items-center gap-2 "
             >
-               <h2 className="font-bold text-xl sm:text-2xl ">SKILLS</h2>
+              <h2 className="font-bold text-xl sm:text-2xl ">SKILLS</h2>
               <p className="border-b-2 w-3/4 text-left sm:w-1/2 text-sm ">
                 Languages
               </p>
