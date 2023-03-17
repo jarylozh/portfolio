@@ -45,15 +45,15 @@ export const Intro = () => {
         ease: "power1.easeIn",
       })
       .to(scrollArrow.current, {
-        delay: 0.2,
+        delay: 0.1,
         opacity: 1,
-        duration: 1,
+        duration: 0.5,
         ease: "power1.easeIn",
       })
       .to(headerBar.current, {
         y: 0,
         opacity: 1,
-        duration: 0.7,
+        duration: 0.4,
         ease: "power3.easeIn",
       });
   });
