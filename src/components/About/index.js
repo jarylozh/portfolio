@@ -50,15 +50,15 @@ export const About = () => {
 
   return (
     <section
-      className="bg-primary text-on-primary w-full h-[700px] p-10 sm:p-0 lg:h-3/4 skew-y-0 lg:skew-y-6"
+      className="bg-primary text-on-primary w-full h-[900px] p-10 sm:p-0 lg:h-3/4 skew-y-0 lg:skew-y-6"
       id="about"
     >
-      <div className="w-full h-full flex justify-center items-center ">
-        <div className=" w-11/12 lg:w-3/4 h-full sm:h-2/5 text-center skew-y-0 sm:text-left lg:-skew-y-6 m-4 sm:m-auto flex flex-col justify-center items-center">
+      <div className="w-full h-full flex justify-center items-center lg:text-xl text-normal">
+        <div className=" w-11/12 lg:w-3/4  sm:h-3/5 text-center skew-y-0 sm:text-left lg:-skew-y-6 m-4 sm:m-auto flex flex-col justify-center items-center">
           <h2 className="font-bold text-2xl text-center">ABOUT ME</h2>
 
-          <div className="flex sm:flex-row flex-col w-4/5 h-full gap-4">
-            <div className="w-full p-2">
+          <div className="flex sm:flex-row flex-col w-4/5 h-full gap-4 ">
+            <div className="w-full p-2  h-fit">
               <h2>Hello!</h2>
               {/* <p>
                 I am a second-year full-stack developer at ST Engineering. Since

@@ -17,7 +17,7 @@ export const Intro = () => {
   const navButtonStyle = 'w-8 h-8 text-sm p-1 sm:text-3xl text-center flex items-center justify-center'
   return (
 
-    <section id='intro' class="w-full h-4/5 flex sm:flex-none ">
+    <section id='intro' className="w-full h-4/5 flex sm:flex-none ">
       <div className='fixed w-full h-12 flex justify-around sm:justify-end sm:gap-8 px-10 z-10 items-center bg-tertiary'>
 
         <div className='group flex justify-center items-center h-12 w-12 flex-col relative'><button className={navButtonStyle}> <img src={linkedIn} className='transition ease-in-out group-hover:-translate-y-1.5' /></button>
