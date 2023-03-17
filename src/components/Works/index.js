@@ -15,19 +15,21 @@ export const Works = () => {
             WORKS
           </h2>
           <div className=" w-3/4 h-full mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto ">
-            <div className="w-full h-2/5 sm:h-[400px] lg:h-[300px] rounded shadow-md shadow-primary/35 p-4 flex flex-col justify-start">
-              <p className="font-bold text-xs sm:text-xl 2xl:text-2xl text-center sm:text-left my-4 ">
-                Culpa est nisi laborum sint consectetur dolor officia ex.
-              </p>
-              <p className="text-xs sm:text-sm 2xl:text-xl text-center sm:text-left">
-                Est nulla nulla ex exercitation amet fugiat. Enim nisi ex
-                nostrud consequat incididunt ea incididunt. Consequat dolore ex
-                proident ex Lorem ut. Ex ullamco officia officia mollit id
-                aliquip enim sunt cillum id do fugiat velit. Elit eiusmod
-                nostrud culpa laborum ullamco ipsum.
-              </p>
+            <div className="w-full h-2/5 sm:h-[400px] lg:h-[300px] rounded shadow-md shadow-primary/35 p-4 flex flex-col justify-around">
+              <span>
+                <p className="font-bold text-xs sm:text-xl 2xl:text-2xl text-center sm:text-left my-4 ">
+                  Culpa est nisi laborum sint consectetur dolor officia ex.
+                </p>
+                <p className="text-xs sm:text-sm 2xl:text-xl text-center sm:text-left">
+                  Est nulla nulla ex exercitation amet fugiat. Enim nisi ex
+                  nostrud consequat incididunt ea incididunt. Consequat dolore
+                  ex proident ex Lorem ut. Ex ullamco officia officia mollit id
+                  aliquip enim sunt cillum id do fugiat velit. Elit eiusmod
+                  nostrud culpa laborum ullamco ipsum.
+                </p>
+              </span>
 
-              <div className="flex justify-between my-auto">
+              <div className="flex justify-between">
                 <div className="flex sm:justify-start items-center justify-center gap-2  ">
                   <button className={buttonStyle}>Demo</button>
                   <button className={buttonStyle}>Github</button>
