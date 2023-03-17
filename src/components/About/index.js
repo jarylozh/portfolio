@@ -1,4 +1,3 @@
-import "./index.scss";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -41,8 +40,17 @@ const languages = [
   },
 ];
 
-const skills = ["HTML5", "CS3", "Typescript", "Javascript", "C++", "C#", "C"];
-const frameworks = ["Svelte", "React", "Flutter", "ThreeJS"];
+const skills = [
+  "HTML5",
+  "CS3",
+  "Typescript",
+  "Javascript",
+  "C++",
+  "C#",
+  "C",
+  "Python",
+];
+const frameworks = ["Svelte", "React", "Flutter", "Hasura", "ThreeJS"];
 
 export const About = () => {
   const gridContainerStyle =
@@ -50,16 +58,16 @@ export const About = () => {
 
   return (
     <section
-      className="bg-primary text-on-primary w-full h-[900px] p-10 sm:p-0 lg:h-3/4 skew-y-0 lg:skew-y-6"
+      className="bg-primary text-on-primary w-full h-[1000px] p-10 sm:p-0 lg:h-full skew-y-0 lg:skew-y-6"
       id="about"
     >
       <div className="w-full h-full flex justify-center items-center lg:text-xl text-normal">
-        <div className=" w-11/12 lg:w-3/4  sm:h-3/5 text-center skew-y-0 sm:text-left lg:-skew-y-6 m-4 sm:m-auto flex flex-col justify-center items-center">
-          <h2 className="font-bold text-2xl text-center">ABOUT ME</h2>
+        <div className=" w-11/12 lg:w-3/4  sm:h-3/5 text-center skew-y-0 sm:text-left lg:-skew-y-6 m-4 sm:m-auto flex flex-col justify-center items-center ">
+          <h2 className="font-bold text-5xl text-center ">ABOUT ME</h2>
 
           <div className="flex sm:flex-row flex-col w-4/5 h-full gap-4 ">
-            <div className="w-full p-2  h-fit">
-              <h2>Hello!</h2>
+            <div className="w-full p-4 h-full ">
+              <h2 className="font-bold text-2xl ">HELLO THERE,</h2>
               {/* <p>
                 I am a second-year full-stack developer at ST Engineering. Since
                 joining the company, I have been part of the product team
@@ -86,16 +94,18 @@ export const About = () => {
 
             <div
               id="skill-container"
-              className="w-full h-fit flex flex-col justify-center sm:justify-start items-center "
+              className=" p-4 w-full h-full flex flex-col justify-center sm:justify-start items-center gap-2 "
             >
-              <p>SKILLS</p>
-              <p className="border-b-2 w-3/4 text-left  sm:w-1/2 text-sm ">Languages</p>
+              <h2 className="font-bold text-2xl">SKILLS</h2>
+              <p className="border-b-2 w-3/4 text-left sm:w-1/2 text-sm ">
+                Languages
+              </p>
 
-              <div className="h-3/4 flex  w-3/4 sm:w-1/2 flex-row flex-wrap mt-2 gap-1 ">
+              <div className="h-3/4 flex  w-3/4 sm:w-1/2 flex-row flex-wrap gap-1 ">
                 {skills.map((skill) => {
                   return (
                     <div className="flex h-fit w-fit px-2 py-0.5 border-2 border-gray-200">
-                      <span className="text-center flex justify-center text-xs items-center text-on-primary font-light">
+                      <span className="text-center flex justify-center text-sm items-center text-on-primary font-light ">
                         {skill}
                       </span>
                     </div>
@@ -103,18 +113,23 @@ export const About = () => {
                 })}
               </div>
 
-              <p className="border-b-2 w-3/4 text-left  sm:w-1/2 text-sm ">Frameworks</p>
-              <div className="h-3/4 flex  w-3/4 sm:w-1/2 flex-row flex-wrap mt-2 gap-1 ">
+              <p className="border-b-2 w-3/4 text-left sm:w-1/2 text-sm ">
+                Frameworks
+              </p>
+
+              <div className="h-1/2 flex  w-3/4 sm:w-1/2 flex-row flex-wrap gap-1 ">
                 {frameworks.map((skill) => {
                   return (
                     <div className="flex h-fit w-fit px-2 py-0.5 border-2 border-gray-200">
-                      <span className="text-center flex justify-center text-xs items-center text-on-primary font-light">
+                      <span className="text-center flex justify-center text-sm items-center text-on-primary font-light ">
                         {skill}
                       </span>
                     </div>
                   );
                 })}
               </div>
+
+             
             </div>
           </div>
         </div>

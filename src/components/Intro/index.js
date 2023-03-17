@@ -35,7 +35,7 @@ export const Intro = () => {
 
       <div className='flex flex-col-reverse justify-center text-center items-center  sm:flex-row sm:m-auto sm:text-left gap-5 relative'>
         <div className='w-4/5 sm:w-3/5'>
-          <span className='text-5xl'>HELLO, I'M JARYL</span>
+          <span className='text-5xl font-bold'>HELLO, I'M JARYL</span>
           <p className="">
             Currently, I'm a software engineer at ST Engineering focused on building applications and services
           </p>
