@@ -1,18 +1,44 @@
 import React from "react";
 
 export const Works = () => {
+  const buttonStyle =
+    " sm:p-0.5 px-2 font-semibold border-2 border-black text-xs sm:text-sm hover:bg-primary hover:text-on-primary transition ease-in-out duration-300";
+
   return (
     <section
-      className="bg-secondary text-on-secondary w-full h-[900px] sm:p-0 lg:h-4/5 skew-y-0 lg:skew-y-6"
+      className="bg-secondary text-on-secondary w-full h-[900px] p-6 sm:p-0 lg:h-4/5 skew-y-0 lg:skew-y-6"
       id="works"
     >
-      <div className="w-full h-full flex justify-center items-center lg:text-xl text-normal">
-        <div className=" w-full h-11/12  sm:h-3/5 text-center skew-y-0 sm:text-left lg:-skew-y-6  sm:m-auto flex flex-col justify-center items-center ">
-          <h2 className="font-bold text-3xl sm:text-5xl text-center ">
-            ABOUT ME
+      <div className="w-full h-full flex flex-col justify-center items-start lg:text-xl text-normal -skew-y-0 lg:-skew-y-6">
+        <div className="w-full h-4/5 ">
+          <h2 className="font-bold text-3xl sm:text-5xl text-center w-full">
+            WORKS
           </h2>
+          <div className=" w-3/4 h-full mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto ">
+            <div className="w-full h-2/5 sm:h-[400px] lg:h-[300px] rounded shadow-md shadow-primary/35 p-4 flex flex-col justify-start">
+              <p className="font-bold text-xs sm:text-xl 2xl:text-2xl text-center sm:text-left my-4 ">
+                Culpa est nisi laborum sint consectetur dolor officia ex.
+              </p>
+              <p className="text-xs sm:text-sm 2xl:text-xl text-center sm:text-left">
+                Est nulla nulla ex exercitation amet fugiat. Enim nisi ex
+                nostrud consequat incididunt ea incididunt. Consequat dolore ex
+                proident ex Lorem ut. Ex ullamco officia officia mollit id
+                aliquip enim sunt cillum id do fugiat velit. Elit eiusmod
+                nostrud culpa laborum ullamco ipsum.
+              </p>
+
+              <div className="flex justify-between my-auto">
+                <div className="flex sm:justify-start items-center justify-center gap-2  ">
+                  <button className={buttonStyle}>Demo</button>
+                  <button className={buttonStyle}>Github</button>
+                </div>
+
+                <div className=""></div>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
     </section>
   );
 };

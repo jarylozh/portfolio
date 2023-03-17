@@ -36,7 +36,7 @@ export const About = () => {
   return (
     <section
       
-      className="bg-primary text-on-primary w-full h-[900px] sm:p-0 lg:h-4/5 skew-y-0 lg:skew-y-6"
+      className="bg-primary text-on-primary w-full h-fit py-6  sm:p-0 lg:h-4/5 skew-y-0 lg:skew-y-6 2xl:h-[1100px]"
       id="about"
     >
       <div className="w-full h-full flex justify-center items-center lg:text-xl text-normal" ref={section}>
@@ -45,9 +45,9 @@ export const About = () => {
             ABOUT ME
           </h2>
 
-          <div className="flex sm:flex-row flex-col w-4/5 h-full gap-4 text-sm sm:text-sm ">
+          <div className="flex sm:flex-row flex-col w-4/5 h-full gap-4 text-sm sm:text-sm 2xl:text-xl">
             <div className="w-full p-4 h-full ">
-              <h2 className="font-bold text-xl sm:text-2xl ">HELLO THERE,</h2>
+              <h2 className="font-bold text-xl sm:text-2xl 2xl:text-5xl">HELLO THERE,</h2>
               <p>
                 I am a second-year full-stack developer at ST Engineering. Since
                 joining the company, I have been part of the product team
@@ -115,56 +115,3 @@ export const About = () => {
     </section>
   );
 };
-
-// export const About = () => {
-//   let sectionItem = useRef(null);
-
-//   useEffect(() => {
-//     gsap.fromTo(
-//       sectionItem.current,
-//       {
-//         opacity: 0,
-//       },
-//       {
-//         opacity: 1,
-//         duration: 2,
-//         scrollTrigger: {
-//           trigger: sectionItem.current,
-//           start: "top center",
-//         },
-//         ease: "power4.easeOut",
-//       }
-//     );
-//   });
-
-//   return (
-//     <div className="section" id="about" ref={sectionItem}>
-//       <div className="section-content">
-//         <div className="about-container">
-// <h2>ABOUT ME</h2>
-// <p>
-//   I am a second-year full-stack developer at ST Engineering. Since
-//   joining the company, I have been part of the product team supporting
-//   the end-to-end development of a C2 framework. This project requires
-//   me to not only build up my technical skills, particularly in JS and
-//   Svelte. But also, to test, maintain, and launch software products
-//   while liaising with multiple stakeholders in the company.
-// </p>
-// <p>
-//   Prior to securing my full-time position at ST, I have been
-//   programming for seven years, developing my skills in a diversity of
-//   frameworks and languages. I am a keen learner who enjoys solving
-//   problems and challenges.
-// </p>
-
-// <p>
-//   During my journey as a software engineer, I started to cultivate an
-//   interest for frontend development ranging from UI/UX to web
-//   development. Also, I'm an addict for valorant, coffee and folding
-//   people in $500 pyjamas(Brazillian jiu-jitsu)
-// </p>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
