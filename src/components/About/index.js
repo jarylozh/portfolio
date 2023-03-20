@@ -19,6 +19,8 @@ const frameworks = ["Svelte", "React", "Flutter", "Hasura", "ThreeJS"];
 export const About = () => {
   let section = useRef(null);
   const timeline = useRef(gsap.timeline());
+
+
   useEffect(() => {
     gsap.set(section.current, { opacity: 0, x: -40 });
     gsap.to(section.current, {
