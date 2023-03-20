@@ -49,7 +49,7 @@ export const About = () => {
             ABOUT ME
           </h2>
 
-          <div className="flex sm:flex-row flex-col w-4/5  gap-4 text-sm sm:text-sm 2xl:text-xl mt-10 border">
+          <div className="flex sm:flex-row flex-col w-4/5  gap-4 text-sm sm:text-sm 2xl:text-xl mt-10">
             <div className="w-full p-4 h-full ">
               <h2 className="font-bold text-2xl sm:text-3xl 2xl:text-5xl mb-2">
                 HELLO THERE,

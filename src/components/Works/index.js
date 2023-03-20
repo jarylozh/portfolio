@@ -48,7 +48,7 @@ export const Works = () => {
           <div className=" w-3/4 h-full mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto ">
             {arr.map((entry, i) => {
               return (
-                <div ref={entry.component} className="w-full h-2/5 sm:h-[400px] lg:h-[300px] rounded shadow-md shadow-primary/35 p-4 flex flex-col justify-around">
+                <div ref={entry.component} className="w-full h-fit sm:h-[400px] lg:h-[300px] rounded shadow-md shadow-primary/35 p-4 flex flex-col justify-around">
                   <span>
                     <p className="font-bold text-xs sm:text-xl 2xl:text-2xl text-center sm:text-left my-4 ">
                       Culpa est nisi laborum sint consectetur dolor officia ex.

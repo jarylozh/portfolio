@@ -4,16 +4,13 @@ import gsap from "gsap";
 import Arrow from "../Arrow/index";
 import { Link } from "react-scroll";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronCircleDown } from "@fortawesome/free-solid-svg-icons";
-
 import linkedIn from "../../assets/images/social/linkedin.svg";
 import githubSvg from "../../assets/images/social/github.svg";
 import portfolioSvg from "../../assets/images/social/portfolio.svg";
 
 export const Intro = () => {
   const buttonStyle =
-    " p-0.5 px-2 font-semibold border-2 border-primary text-sm bg-primary text-on-primary hover:bg-secondary hover:text-on-secondary transition ease-in-out duration-300";
+    "relative hover:-top-2 p-0.5 px-2 font-semibold border-2 border-primary text-sm bg-secondary text-on-secondary transition ease-in-out duration-300";
   const navButtonStyle =
     "w-8 h-8 text-sm p-1 sm:text-3xl text-center flex items-center justify-center";
 
@@ -111,7 +108,7 @@ export const Intro = () => {
             building applications and services
           </p>
           <span
-            className="flex flex-col sm:flex-row gap-0.5 mt-2 justify-center sm:justify-start"
+            className="flex flex-col sm:flex-row gap-1 mt-4 justify-center sm:justify-start relative"
             ref={navBar}
           >
             <button className={buttonStyle}>
