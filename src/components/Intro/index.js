@@ -4,9 +4,10 @@ import gsap from "gsap";
 import Arrow from "../Arrow/index";
 import { Link } from "react-scroll";
 
-import linkedIn from "../../assets/images/social/linkedin.svg";
-import githubSvg from "../../assets/images/social/github.svg";
-import portfolioSvg from "../../assets/images/social/portfolio.svg";
+import { FaLinkedin, FaGit } from "react-icons/fa";
+import { RiFilePaper2Line } from "react-icons/ri";
+
+import './index.scss'
 
 export const Intro = () => {
   const buttonStyle =
@@ -14,11 +15,14 @@ export const Intro = () => {
   const navButtonStyle =
     "w-8 h-8 text-sm p-1 sm:text-3xl text-center flex items-center justify-center";
 
+  const commonStyle = 'transition ease-in-out group-hover:-translate-y-1.5 text-on-primary'
+
   const [hasScrolled, setHasScrolled] = useState(false);
   let section = useRef(null);
   let scrollArrow = useRef(null);
   let navBar = useRef(null);
   let headerBar = useRef(null);
+
 
   const timeline = useRef(gsap.timeline());
   useEffect(() => {
@@ -58,27 +62,24 @@ export const Intro = () => {
   return (
     <section id="intro" className="w-full h-4/5 flex sm:flex-none bg-secondary">
       <div
-        className="fixed w-full h-12 flex justify-around sm:justify-end sm:gap-8 px-10 z-30 items-center bg-tertiary"
+        className="fixed w-full h-14 flex justify-around sm:justify-end sm:gap-8 px-10 z-30 items-center bg-primary"
         ref={headerBar}
       >
         <div className="group flex justify-center items-center h-12 w-12 flex-col relative">
           <button className={navButtonStyle}>
-            <img
-              src={linkedIn}
-              className="transition ease-in-out group-hover:-translate-y-1.5"
-            />
+            <span
+              className={commonStyle}
+            ><FaLinkedin /></span>
           </button>
-          <label className="text-xs font-semibold absolute bottom-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+          <label className="text-xs font-semibold absolute bottom-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out ">
             LinkedIn
           </label>
         </div>
         <div className="group flex justify-center items-center h-12 w-12 flex-col relative">
-          {" "}
           <button className={navButtonStyle}>
-            <img
-              src={githubSvg}
-              className="transition ease-in-out group-hover:-translate-y-1.5"
-            />
+            <span
+              className={commonStyle}
+            ><FaGit /></span>
           </button>
           <label className="text-xs font-semibold absolute bottom-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
             Github
@@ -86,10 +87,9 @@ export const Intro = () => {
         </div>
         <div className="group flex justify-center items-center h-12 w-12 flex-col relative">
           <button className={navButtonStyle}>
-            <img
-              src={portfolioSvg}
-              className="transition ease-in-out group-hover:-translate-y-1.5"
-            />
+            <span
+              className={commonStyle}
+            ><RiFilePaper2Line /></span>
           </button>
           <label className="text-xs font-semibold absolute bottom-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
             Resume
