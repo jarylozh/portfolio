@@ -7,16 +7,16 @@ gsap.registerPlugin(ScrollTrigger);
 export const Works = () => {
 
   let arr = [
-    {name: '', description: '', component: useRef(null), githubUrl: ''},
-    {name: '', description: '', component: useRef(null), githubUrl: ''},
-    {name: '', description: '', component: useRef(null), githubUrl: ''},
-    {name: '', description: '', component: useRef(null), githubUrl: ''}
+    { name: '', description: '', component: useRef(null), githubUrl: '' },
+    { name: '', description: '', component: useRef(null), githubUrl: '' },
+    { name: '', description: '', component: useRef(null), githubUrl: '' },
+    { name: '', description: '', component: useRef(null), githubUrl: '' }
   ];
 
 
-  useEffect(()=> {
-    arr.forEach(obj=> {
-      gsap.set(obj.component.current, {opacity: 0})
+  useEffect(() => {
+    arr.forEach(obj => {
+      gsap.set(obj.component.current, { opacity: 0 })
 
       gsap.to(obj.component.current, {
         x: 0,
@@ -29,9 +29,9 @@ export const Works = () => {
         },
       });
     })
-   
+
   })
-  
+
   const buttonStyle =
     " sm:p-0.5 px-2 font-semibold border-2 border-black text-xs sm:text-sm hover:bg-primary hover:text-on-primary transition ease-in-out duration-300";
 
@@ -62,10 +62,10 @@ export const Works = () => {
                     </p>
                   </span>
 
-                  <div className="flex justify-between">
+                  <div className="flex justify-between mt-4">
                     <div className="flex sm:justify-start items-center justify-center gap-2  ">
-                      <button className={buttonStyle}>Demo</button>
-                      <button className={buttonStyle}>Github</button>
+                      <button className="btn btn-slide" style={{ padding: "0px 3px" }}>Demo</button>
+                      <button className="btn btn-slide" style={{ padding: "0px 3px" }}>Github</button>
                     </div>
 
                     <div className=""></div>

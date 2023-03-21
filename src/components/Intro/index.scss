@@ -1,7 +1,50 @@
 .btn {
-    padding: .5em 1em;
-    border:none;
-    outline:none;
-    position: relative;
-    cursor: pointer;
+  padding: 0.2em 1em;
+  font-weight: 700;
+  font-size: small;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.btn.btn-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--primary);
+  z-index: -1;
+  transition: transform 250ms ease-in-out;
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+
+.btn.btn-slide {
+  transition: color 250ms ease-in-out;
+  z-index: 1;
+}
+
+.btn.btn-slide:hover::before,
+.btn.btn-slide:focus::before {
+  transform: scaleY(1);
+}
+
+.btn.btn-slide:hover,
+.btn.btn-slide:focus {
+  color: var(--on-primary);
+}
+
+@media only screen and (max-width: 640px) {
+  .btn.btn-slide::before {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  .btn.btn-slide:hover::before,
+  .btn.btn-slide:focus::before {
+    transform: scaleX(1);
+  }
 }

@@ -62,7 +62,7 @@ export const Intro = () => {
   return (
     <section id="intro" className="w-full h-4/5 flex sm:flex-none bg-secondary">
       <div
-        className="fixed w-full h-14 flex justify-around sm:justify-end sm:gap-8 px-10 z-30 items-center bg-primary"
+        className="fixed w-full h-14 flex justify-around sm:justify-end sm:gap-8 px-10 z-30 items-center bg-header "
         ref={headerBar}
       >
         <div className="group flex justify-center items-center h-12 w-12 flex-col relative">
@@ -102,8 +102,8 @@ export const Intro = () => {
         ref={section}
       >
         <div className="w-4/5 sm:w-3/5">
-          <span className="text-5xl font-bold">HELLO, I'M JARYL</span>
-          <p className="">
+          <span className="text-5xl font-bold lg:text-6xl">HELLO, I'M JARYL</span>
+          <p className="lg:text-2xl">
             Currently, I'm a software engineer at ST Engineering focused on
             building applications and services
           </p>
@@ -111,22 +111,22 @@ export const Intro = () => {
             className="flex flex-col sm:flex-row gap-1 mt-4 justify-center sm:justify-start relative"
             ref={navBar}
           >
-            <button className={buttonStyle}>
+            <button className="btn btn-slide">
               <Link to="intro" smooth={true} spy={true} duration={500}>
                 Home
               </Link>
             </button>
-            <button className={buttonStyle}>
+            <button className="btn btn-slide">
               <Link to="about" smooth={true} spy={true} duration={500}>
                 About
               </Link>
             </button>
-            <button className={buttonStyle}>
+            <button className="btn btn-slide">
               <Link to="experience" smooth={true} spy={true} duration={500}>
                 Experience
               </Link>
             </button>
-            <button className={buttonStyle}>
+            <button className="btn btn-slide">
               <Link to="works" smooth={true} spy={true} duration={500}>
                 Work
               </Link>
