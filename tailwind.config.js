@@ -6,12 +6,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'header': '#020204',
-        'primary': '#46413B',
-        'secondary': '#F7F7F5',
-        'tertiary': '#c7c9c8',
-        'on-primary': '#f3f3f3',
-        'on-secondary': '#1b1b1b',
+        'header': '#2C3333',
+        'primary': '#0E8388',
+        'secondary': '#CBE4DE',
+        'tertiary': '#CBE4DE',
+        'on-primary': '#2C3333',
+        'on-secondary': '#2C3333',
       },
       fontFamily: {
         "dm-sans": ["'DM Sans'"]

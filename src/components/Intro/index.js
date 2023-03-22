@@ -10,12 +10,11 @@ import { RiFilePaper2Line } from "react-icons/ri";
 import './index.scss'
 
 export const Intro = () => {
-  const buttonStyle =
-    "relative hover:-top-2 p-0.5 px-2 font-semibold border-2 border-primary text-sm bg-secondary text-on-secondary transition ease-in-out duration-300";
   const navButtonStyle =
-    "w-8 h-8 text-sm p-1 sm:text-3xl text-center flex items-center justify-center";
+    "w-8 h-8 text-sm p-1 sm:text-2xl text-center flex items-center justify-center text-on-secondary";
 
-  const commonStyle = 'transition ease-in-out group-hover:-translate-y-1.5 text-on-primary'
+  const commonStyle = "transition ease-in-out group-hover:-translate-y-1.5 text-on-secondary text-2xl"
+  const labelStyle = "text-sm font-semibold absolute bottom-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
 
   const [hasScrolled, setHasScrolled] = useState(false);
   let section = useRef(null);
@@ -60,18 +59,18 @@ export const Intro = () => {
   });
 
   return (
-    <section id="intro" className="w-full h-4/5 flex sm:flex-none bg-secondary">
+    <section id="intro" className="w-full h-full flex sm:flex-none">
       <div
-        className="fixed w-full h-14 flex justify-around sm:justify-end sm:gap-8 px-10 z-30 items-center bg-header "
+        className="fixed w-full h-20 sm:h-16 flex justify-around sm:justify-end sm:gap-8 px-10 z-50 items-center shadow-lg bg-gradient-to-b from-secondary via-secondary/60 to-transparent"
         ref={headerBar}
       >
-        <div className="group flex justify-center items-center h-12 w-12 flex-col relative">
+        <div className="group flex justify-center items-center h-14 w-14 flex-col relative">
           <button className={navButtonStyle}>
             <span
               className={commonStyle}
             ><FaLinkedin /></span>
           </button>
-          <label className="text-xs font-semibold absolute bottom-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out ">
+          <label className={labelStyle}>
             LinkedIn
           </label>
         </div>
@@ -81,7 +80,7 @@ export const Intro = () => {
               className={commonStyle}
             ><FaGit /></span>
           </button>
-          <label className="text-xs font-semibold absolute bottom-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+          <label className={labelStyle}>
             Github
           </label>
         </div>
@@ -91,24 +90,24 @@ export const Intro = () => {
               className={commonStyle}
             ><RiFilePaper2Line /></span>
           </button>
-          <label className="text-xs font-semibold absolute bottom-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+          <label className={labelStyle}>
             Resume
           </label>
         </div>
       </div>
 
       <div
-        className="flex flex-col-reverse justify-center text-center items-center  sm:flex-row sm:m-auto sm:text-left gap-5 relative "
+        className="flex flex-col-reverse justify-center text-on-primary text-center items-center lg:flex-row sm:m-auto sm:text-left gap-5 relative "
         ref={section}
       >
         <div className="w-4/5 sm:w-3/5">
-          <span className="text-5xl font-bold lg:text-6xl">HELLO, I'M JARYL</span>
-          <p className="lg:text-2xl">
+          <span className="text-5xl font-bold lg:text-6xl text-primary">HELLO, I'M JARYL</span>
+          <p className="lg:text-2xl py-2">
             Currently, I'm a software engineer at ST Engineering focused on
             building applications and services
           </p>
           <span
-            className="flex flex-col sm:flex-row gap-1 mt-4 justify-center sm:justify-start relative"
+            className="flex flex-col lg:flex-row gap-1 mt-4 justify-center sm:justify-start relative"
             ref={navBar}
           >
             <button className="btn btn-slide">
@@ -134,7 +133,7 @@ export const Intro = () => {
           </span>
         </div>
 
-        <div className="sm:w-48 sm:h-48 xs:w-36 xs:h-36 w-24 h-24 aspect-square">
+        <div className="sm:w-48 sm:h-48 xs:w-36 xs:h-36 w-24 h-24 lg:w-64 aspect-square">
           <img
             className="object-contain"
             src={profilePicture}
@@ -146,7 +145,7 @@ export const Intro = () => {
       <span
         ref={scrollArrow}
         className={
-          "absolute bottom-[22%] sm:bottom-[40%] left-[50%] animate-bounce"
+          "absolute bottom-[5%] lg:bottom-[30%] left-[50%] animate-bounce"
         }
         hidden={hasScrolled}
       >

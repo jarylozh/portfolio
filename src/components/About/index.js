@@ -20,7 +20,6 @@ export const About = () => {
   let section = useRef(null);
   const timeline = useRef(gsap.timeline());
 
-
   useEffect(() => {
     gsap.set(section.current, { opacity: 0, x: -40 });
     gsap.to(section.current, {
@@ -37,20 +36,17 @@ export const About = () => {
 
   return (
     <section
-      className="bg-primary text-on-primary w-full h-[1000px]  py-6  sm:p-0  skew-y-0 lg:skew-y-6 2xl:h-[1100px]"
+      className="bg-primary text-on-primary w-full h-[1000px] sm:h-[800px] sm:p-0 skew-y-0 lg:skew-y-6 2xl:h-4/10"
       id="about"
     >
-      <div
-        className="w-full h-full flex justify-center items-center lg:text-xl text-normal"
-        ref={section}
-      >
-        <div className=" w-full h-full  sm:h-3/5 text-center skew-y-0 sm:text-left lg:-skew-y-6  sm:m-auto flex flex-col justify-center items-center ">
+      <div className="w-full h-full lg:text-xl text-normal flex justify-center" ref={section}>
+        <div className=" w-4/5 h-4/5 sm:h-3/5 text-center skew-y-0 sm:text-left lg:-skew-y-6 sm:m-auto flex flex-col justify-start items-center pt-10 ">
           <h2 className="font-bold text-3xl sm:text-5xl text-center ">
             ABOUT ME
           </h2>
 
-          <div className="flex sm:flex-row flex-col w-4/5  gap-4 text-sm sm:text-sm 2xl:text-xl mt-10">
-            <div className="w-full p-4 h-full ">
+          <div className="grid lg:grid-cols-2 grid-cols-1 items-center mt-4 ">
+            <div className=" w-full gap-4 text-sm sm:text-sm 2xl:text-xl  p-4">
               <h2 className="font-bold text-2xl sm:text-3xl 2xl:text-5xl mb-2">
                 HELLO THERE,
               </h2>
@@ -63,12 +59,6 @@ export const About = () => {
                 launch software products while liaising with multiple
                 stakeholders in the company.
               </p>
-              {/* <p className="mt-2">
-                Prior to securing my full-time position at ST, I have been
-                programming for seven years, developing my skills in a diversity
-                of frameworks and languages. I am a keen learner who enjoys
-                solving problems and challenges.
-              </p> */}
 
               <p className="mt-2">
                 During my journey as a software engineer, I started to cultivate
@@ -80,20 +70,20 @@ export const About = () => {
 
             <div
               id="skill-container"
-              className="w-full flex flex-col justify-center sm:justify-start items-center gap-2 p-4"
+              className="w-full h-full gap-2  p-4"
             >
               <h2 className="font-bold text-2xl sm:text-3xl 2xl:text-5xl ">
                 SKILLS
               </h2>
-              <p className="border-b-2 w-3/4 text-left sm:w-1/2 text-sm ">
+              <p className="font-semibold w-3/4 text-left sm:w-1/2 text-sm mt-3 2xl:text-2xl ">
                 Languages
               </p>
 
-              <div className="h-fit flex w-3/4 sm:w-1/2 flex-row flex-wrap gap-1">
+              <div className="h-fit flex w-3/4 sm:w-1/2 flex-row flex-wrap gap-1 py-3">
                 {skills.map((skill) => {
                   return (
-                    <div className="flex h-fit w-fit px-2 py-0.5 border-2 border-gray-200">
-                      <span className="text-center flex justify-center text-sm items-center text-on-primary font-light ">
+                    <div className="flex h-fit w-fit px-2 py-0.5 2xl:px-3 2xl:py-1 border-2 border-on-primary rounded">
+                      <span className="text-center flex justify-center text-sm 2xl:text-xl items-center text-on-primary font-light ">
                         {skill}
                       </span>
                     </div>
@@ -101,15 +91,15 @@ export const About = () => {
                 })}
               </div>
 
-              <p className="border-b-2 w-3/4 text-left sm:w-1/2 text-sm ">
+              <p className="font-semibold w-3/4 text-left sm:w-1/2 text-sm 2xl:text-2xl ">
                 Frameworks
               </p>
 
-              <div className="h-fit flex  w-3/4 sm:w-1/2 flex-row flex-wrap gap-1 ">
+              <div className="h-fit flex  w-3/4 sm:w-1/2 flex-row flex-wrap gap-1 py-3">
                 {frameworks.map((skill) => {
                   return (
-                    <div className="flex h-fit w-fit px-2 py-0.5 border-2 border-gray-200">
-                      <span className="text-center flex justify-center text-sm items-center text-on-primary font-light ">
+                    <div className="flex h-fit w-fit px-2 py-0.5 2xl:px-3 2xl:py-1 border-2 border-on-primary rounded">
+                      <span className="text-center flex justify-center text-sm 2xl:text-xl items-center text-on-primary font-light ">
                         {skill}
                       </span>
                     </div>

@@ -1,7 +1,7 @@
 .btn {
-  padding: 0.2em 1em;
+  padding: 0.4em 2em;
   font-weight: 700;
-  font-size: small;
+  font-size: medium;
   outline: none;
   position: relative;
   cursor: pointer;
@@ -37,7 +37,7 @@
   color: var(--on-primary);
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 1024px) {
   .btn.btn-slide::before {
     transform: scaleX(0);
     transform-origin: left;

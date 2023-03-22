@@ -37,10 +37,10 @@ export const Works = () => {
 
   return (
     <section
-      className="bg-secondary text-on-secondary w-full h-[900px] p-6 sm:p-0 lg:h-4/5 skew-y-0 lg:skew-y-6"
+      className="bg-secondary text-on-secondary w-full h-[1000px] p-6 sm:p-0 lg:h-4/5 skew-y-0 lg:skew-y-6 "
       id="works"
     >
-      <div className="w-full h-full flex flex-col justify-center items-start lg:text-xl text-normal -skew-y-0 lg:-skew-y-6">
+      <div className=" w-full h-full flex flex-col justify-center items-start lg:text-xl text-normal -skew-y-0 lg:-skew-y-6">
         <div className="w-full h-4/5 ">
           <h2 className="font-bold text-3xl sm:text-5xl text-center w-full">
             WORKS
