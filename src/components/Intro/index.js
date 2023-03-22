@@ -145,7 +145,7 @@ export const Intro = () => {
       <span
         ref={scrollArrow}
         className={
-          "absolute bottom-[5%] lg:bottom-[30%] left-[50%] animate-bounce"
+          "absolute sm:bottom-[5%] lg:bottom-[20%] left-[50%] animate-bounce"
         }
         hidden={hasScrolled}
       >
