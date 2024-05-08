@@ -1,113 +1,165 @@
-import Image from "next/image";
+"use client";
+import React, { useRef } from "react";
+import "./page.css";
+import { Link } from "react-scroll";
+import Experience from "./components/experience/experience";
+import { LuArrowUpRightSquare } from "react-icons/lu";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+const menu = [
+  {
+    label: "about",
+    link: "about",
+  },
+  {
+    label: "experience",
+    link: "experience",
+  },
+
+  {
+    label: "project",
+    link: "project",
+  },
+];
+
+const certifications = [
+  {
+    name: "Amazon Web Services Developer - Associate",
+    subheader: "Amazon Web Services (AWS)",
+    points: ["Issued Dec 2023", "Credential ID SKGHHPGBSFF1QSWC"],
+    url: "https://cp.certmetrics.com/amazon/en/public/verify/credential/SKGHHPGBSFF1QSWC",
+  },
+];
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
+    <main className="xl:grid xl:grid-cols-2 xl:h-screen py-4 w-full">
+      <div className="xl:h-full xl:w-1/2 min-w-[500px] xl:ml-auto px-20 pt-24 w-full">
+        <h1 className="text-slate-200 font-semibold text-4xl tracking-wide">
+          Jaryl Ong
+        </h1>
+        <h2 className="text-lg font-medium mt-3 tracking-wider text-slate-200">
+          Junior Software Engineer
+        </h2>
+        <p className="mt-4 w-64 text-sm text-slate-200 tracking-wide opacity-50">
+          I create immersive and engaging digital experience, or at least I try
+          to be.
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+
+        <nav className="xl:block hidden">
+          <ul className="uppercase text-xs tracking-wide mt-16">
+            {menu.map((m, index: number) => (
+              <Link
+                containerId="scroll-container"
+                to={m.link}
+                spy={true}
+                smooth={true}
+                offset={-96}
+                duration={500}
+                activeClass="active"
+              >
+                <li
+                  className="my-4 flex items-center group hover:cursor-pointer"
+                  key={index}
+                >
+                  <hr className="seperator transition-width duration-200 ease-in-out w-12 group-hover:w-24 mr-4 border-[1px] rounded" />
+                  <span
+                    className={`tracking-[0.15rem] 
+                    )}`}
+                  >
+                    {m.label}
+                  </span>
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </nav>
+
+        <footer className="flex gap-4 mt-16">
+            <a className="nav-links"><FaGithub fontSize={24}/></a>
+            <a className="nav-links"><FaInstagram fontSize={24}/></a>
+            <a className="nav-links"><FaLinkedin fontSize={24}/></a>
+
+
+        </footer>
+      </div>
+
+      <div
+        className="xl:overflow-y-auto px-16"
+        id="scroll-container"
+      >
+        <div className="pt-24 xl:w-3/4 xl:min-w-[500px] w-full mr-auto flex flex-col gap-24  text-slate-100/75">
+          <section id="about" className="w-full p-4 flex gap-4 flex-col">
+            <h1 className="uppercase tracking-wider text-base font-bold block xl:hidden">
+              About
+            </h1>
+            <p className="">
+              Currently, I'm working at ST Engineering as a software engineer,
+              mostly building components and pages for my team's {" "}
+              <a
+                href="https://svelte.dev/"
+                className="text-white hover:brightness-200"
+                target="_blank"
+              >
+                Svelte
+              </a>{" "}
+              project. Once in a while, I do volunteer to work on the backend
+              for certain modules for my learning experience. Currently, I'm in
+              the midst of using this website as a platform to grow my knowledge
+              in React.
+            </p>
+
+            <p className="">
+              On a normal day, I'm usually building gunpla, practicing mexican
+              grown karate, or perhaps hunting monsters in Moga Village with my
+              girlfriend.
+            </p>
+          </section>
+
+          {/* Certification */}
+          <section className="flex flex-col gap-4">
+            <h1 className="uppercase tracking-wider text-base font-bold block xl:hidden">
+              Certification
+            </h1>
+
+            {certifications.map((c) => (
+              <a
+                target="_blank"
+                href={c.url}
+                className="items-start w-full gap-4 p-4 flex hover:brightness-125 transition-colors duration-200 ease-in-out group hover:bg-teal-50/10 hover:shadow-lg hover:cursor-pointer"
+              >
+                <img src="./aws.png" className="w-16 my-auto" />
+                <div className="px-4 grow">
+                  <h1 className="group-hover:text-teal-400 transition-colors duration-200 ease-in-out text-white">
+                    {c.name}
+                  </h1>
+                  <h2>{c.subheader}</h2>
+                  <ul>
+                    {c.points.map((p: string, index: number) => (
+                      <li key={index} className="text-sm text-slate-100/75">{p}</li>
+                    ))}
+                  </ul>
+                </div>
+                <span>
+                  <LuArrowUpRightSquare
+                    fontSize={16}
+                    className="group-hover:text-teal-400 group-hover:translate-x-1 group-hover:-translate-y-1 duration-200 ease-in-out transition-transform"
+                  />
+                </span>
+              </a>
+            ))}
+          </section>
+
+          <section id="experience" className="p-4 flex flex-col gap-4">
+            <h1 className="uppercase tracking-wider text-base font-bold block xl:hidden">
+              Experience
+            </h1>
+            <Experience />
+          </section>
+
+          <section id="project" className=""></section>
         </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
       </div>
     </main>
   );
 }
+
