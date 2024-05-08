@@ -83,8 +83,9 @@ export default function Experience() {
   return (
     <table className="border-spacing-y-4 border-separate table-auto">
       <tbody>
-        {nodes.map((n) => (
+        {nodes.map((n, index: number) => (
           <tr
+            key={index}
             onClick={() => {
               window.open(n.url);
             }}
@@ -101,13 +102,13 @@ export default function Experience() {
                 {n.role} - {n.name}
               </h1>
               <ul className="px-4">
-                {n.points.map((p) => (
-                  <li className="text-slate-100/75 text-sm list-disc">{p}</li>
+                {n.points.map((p, index: number) => (
+                  <li key={index} className="text-slate-100/75 text-sm list-disc">{p}</li>
                 ))}
               </ul>
               <div className="flex w-full flex-wrap gap-2 pt-2 py-2">
-                {n.skills?.map((s) => (
-                  <span className="text-xs font-medium rounded-lg text-teal-400 bg-teal-800/50 px-2 py-1 capitalize">
+                {n.skills?.map((s, index: number) => (
+                  <span key={index} className="text-xs font-medium rounded-lg text-teal-400 bg-teal-800/50 px-2 py-1 capitalize">
                     {s}
                   </span>
                 ))}

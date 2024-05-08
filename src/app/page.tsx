@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <main className="xl:grid xl:grid-cols-2 xl:h-screen py-4 w-full">
       <div className="xl:h-full xl:w-1/2 min-w-[500px] xl:ml-auto px-20 pt-24 w-full">
-        <h1 className="text-slate-200 font-semibold text-4xl tracking-wide">
+        <h1 className="text-slate-200 font-semibold text-4xl">
           Jaryl Ong
         </h1>
         <h2 className="text-lg font-medium mt-3 tracking-wider text-slate-200">
@@ -49,6 +49,7 @@ export default function Home() {
           <ul className="uppercase text-xs tracking-wide mt-16">
             {menu.map((m, index: number) => (
               <Link
+                key={index}
                 containerId="scroll-container"
                 to={m.link}
                 spy={true}
@@ -121,8 +122,9 @@ export default function Home() {
               Certification
             </h1>
 
-            {certifications.map((c) => (
+            {certifications.map((c, index: number) => (
               <a
+                key={index}
                 target="_blank"
                 href={c.url}
                 className="items-start w-full gap-4 p-4 flex hover:brightness-125 transition-colors duration-200 ease-in-out group hover:bg-teal-50/10 hover:shadow-lg hover:cursor-pointer"
