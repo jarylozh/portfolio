@@ -34,13 +34,11 @@ export default function Home() {
   return (
     <main className="xl:grid xl:grid-cols-2 xl:h-screen py-4 w-full">
       <div className="xl:h-full xl:w-1/2 min-w-[500px] xl:ml-auto px-20 pt-24 w-full">
-        <h1 className="text-slate-200 font-semibold text-4xl">
-          Jaryl Ong
-        </h1>
-        <h2 className="text-lg font-medium mt-3 tracking-wider text-slate-200">
+        <h1 className="text-slate-200 text-3xl">Jaryl Ong</h1>
+        <h2 className="text-lg font-medium mt-3 text-slate-200">
           Junior Software Engineer
         </h2>
-        <p className="mt-4 w-64 text-sm text-slate-200 tracking-wide opacity-50">
+        <p className="mt-4 w-64 text-sm text-slate-200 tracking-tight opacity-50">
           I create immersive and engaging digital experience, or at least I try
           to be.
         </p>
@@ -76,43 +74,37 @@ export default function Home() {
         </nav>
 
         <footer className="flex gap-4 mt-16">
-            <a className="nav-links"><FaGithub fontSize={24}/></a>
-            <a className="nav-links"><FaInstagram fontSize={24}/></a>
-            <a className="nav-links"><FaLinkedin fontSize={24}/></a>
-
-
+          <a className="nav-links">
+            <FaGithub fontSize={24} />
+          </a>
+          <a className="nav-links">
+            <FaInstagram fontSize={24} />
+          </a>
+          <a className="nav-links">
+            <FaLinkedin fontSize={24} />
+          </a>
         </footer>
       </div>
 
-      <div
-        className="xl:overflow-y-auto px-16"
-        id="scroll-container"
-      >
+      <div className="xl:overflow-y-auto px-16" id="scroll-container">
         <div className="pt-24 xl:w-3/4 xl:min-w-[500px] w-full mr-auto flex flex-col gap-24  text-slate-100/75">
           <section id="about" className="w-full p-4 flex gap-4 flex-col">
             <h1 className="uppercase tracking-wider text-base font-bold block xl:hidden">
               About
             </h1>
+
+            <p>Hello there, I'm Jaryl, a software engineer at ST Engineering. 
+              I've been with the company for almost three years now.</p>
             <p className="">
-              Currently, I'm working at ST Engineering as a software engineer,
-              mostly building components and pages for my team's {" "}
-              <a
-                href="https://svelte.dev/"
-                className="text-white hover:brightness-200"
-                target="_blank"
-              >
-                Svelte
-              </a>{" "}
-              project. Once in a while, I do volunteer to work on the backend
-              for certain modules for my learning experience. Currently, I'm in
-              the midst of using this website as a platform to grow my knowledge
-              in React.
+              While my focus primarily centers around frontend work, I also
+              possess a bit of experience in backend development, which adds
+              depth and versatility to my skill set.
             </p>
 
             <p className="">
-              On a normal day, I'm usually building gunpla, practicing mexican
-              grown karate, or perhaps hunting monsters in Moga Village with my
-              girlfriend.
+              Outside the office, you'll often find me practicing mexican grown
+              karate, building gunplas or hunting monsters at Moga village with
+              my partner.
             </p>
           </section>
 
@@ -137,7 +129,9 @@ export default function Home() {
                   <h2>{c.subheader}</h2>
                   <ul>
                     {c.points.map((p: string, index: number) => (
-                      <li key={index} className="text-sm text-slate-100/75">{p}</li>
+                      <li key={index} className="text-sm text-slate-100/75">
+                        {p}
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -164,4 +158,3 @@ export default function Home() {
     </main>
   );
 }
-
