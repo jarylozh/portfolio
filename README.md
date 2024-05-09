@@ -9,8 +9,8 @@ About Me: Learn more about me, my skills, and my background.
 Project Showcase: View my latest projects and see what I've been working on.
 
 # Technologies Used
-React
-HTML5
-CSS3
-JavaScript
-Tailwind
+* React
+* HTML5
+* CSS3
+* JavaScript
+* Tailwind
