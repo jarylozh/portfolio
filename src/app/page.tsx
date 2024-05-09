@@ -36,7 +36,7 @@ export default function Home() {
       <div className="xl:h-full xl:w-1/2 min-w-[500px] xl:ml-auto px-20 pt-24 w-full">
         <h1 className="text-slate-200 text-3xl">Jaryl Ong</h1>
         <h2 className="text-lg font-medium mt-3 text-slate-200">
-          Junior Software Engineer
+          Software Engineer
         </h2>
         <p className="mt-4 w-64 text-sm text-slate-200 tracking-tight opacity-50">
           I create immersive and engaging digital experience, or at least I try
