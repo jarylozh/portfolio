@@ -81,7 +81,7 @@ export default function Experience() {
   ];
 
   return (
-    <table className="border-spacing-y-4 border-separate table-auto">
+    <table className="border-spacing-y-4 border-separate table-fixed">
       <tbody>
         {nodes.map((n, index: number) => (
           <tr
@@ -94,28 +94,42 @@ export default function Experience() {
             <td className="py-4 px-4 group-hover:text-teal-400 transition-colors duration-200 ease-in-out">
               {n.isWork ? <MdWork size={20} /> : <MdSchool size={20} />}
             </td>
-            <td className="py-4 text-xs  w-36 uppercase text-slate-100/75 group-hover:text-teal-400 transition-colors duration-200 ease-in-out mx-4">
+            <td className="py-4 xl:block min-w-24 hidden text-xs  uppercase text-slate-100/75 group-hover:text-teal-400 transition-colors duration-200 ease-in-out mx-4">
               {n.duration[0]} - {n.duration[1]}
             </td>
             <td className="py-3 mx-4 px-2">
-              <h1 className="text-white group-hover:text-teal-400 transition-all duration-200 ease-in-out mb-2">
+              <h1 className="text-white group-hover:text-teal-400 transition-all duration-200 ease-in-out">
                 {n.role} - {n.name}
               </h1>
+              <p className="text-xs py-1 mb-2 xl:hidden">
+                {n.duration[0]} - {n.duration[1]}
+              </p>
               <ul className="px-4">
                 {n.points.map((p, index: number) => (
-                  <li key={index} className="text-slate-100/75 text-sm list-disc">{p}</li>
+                  <li
+                    key={index}
+                    className="text-slate-100/75 text-sm list-disc"
+                  >
+                    {p}
+                  </li>
                 ))}
               </ul>
               <div className="flex w-full flex-wrap gap-2 pt-2 py-2">
                 {n.skills?.map((s, index: number) => (
-                  <span key={index} className="text-xs font-medium rounded-lg text-teal-400 bg-teal-800/50 px-2 py-1 capitalize">
+                  <span
+                    key={index}
+                    className="text-xs font-medium rounded-lg text-teal-400 bg-teal-800/50 px-2 py-1 capitalize"
+                  >
                     {s}
                   </span>
                 ))}
               </div>
             </td>
             <td className="py-4 px-4">
-              <LuArrowUpRightSquare size={16} className="group-hover:text-teal-400 group-hover:translate-x-1 group-hover:-translate-y-1 duration-200 ease-in-out transition-transform" />
+              <LuArrowUpRightSquare
+                size={16}
+                className="group-hover:text-teal-400 group-hover:translate-x-1 group-hover:-translate-y-1 duration-200 ease-in-out transition-transform"
+              />
             </td>
           </tr>
         ))}

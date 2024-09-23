@@ -32,8 +32,8 @@ const certifications = [
 
 export default function Home() {
   return (
-    <main className="xl:grid xl:grid-cols-2 xl:h-screen py-4 w-full">
-      <div className="xl:h-full xl:w-1/2 min-w-[500px] xl:ml-auto px-20 pt-24 w-full">
+    <main className="xl:grid xl:grid-cols-2 xl:h-screen py-4 w-full min-w-[400px]">
+      <div className="xl:h-full xl:w-1/2 sm:w-3/5 min-w-[500px] xl:ml-auto px-20 pt-24 w-full">
         <h1 className="text-slate-200 text-3xl">Jaryl Ong</h1>
         <h2 className="text-lg font-medium mt-3 text-slate-200">
           Software Engineer
@@ -93,8 +93,10 @@ export default function Home() {
               About
             </h1>
 
-            <p>Hello there, I'm Jaryl, a software engineer at ST Engineering. 
-              I've been with the company for almost three years now.</p>
+            <p>
+              Hello there, I'm Jaryl, a software engineer at ST Engineering.
+              I've been with the company for almost three years now.
+            </p>
             <p className="">
               While my focus primarily centers around frontend work, I also
               possess a bit of experience in backend development, which adds
@@ -102,9 +104,9 @@ export default function Home() {
             </p>
 
             <p className="">
-              Outside the office, you'll often find me practicing mexican grown
-              karate, building gunplas or hunting monsters at Moga village with
-              my partner.
+              Outside of work, I'm either immersing myself in Mexican ground
+              karate, doing intricate model making, or embarking on thrilling
+              monster-hunting adventures in Moga village (with my partner)
             </p>
           </section>
 
