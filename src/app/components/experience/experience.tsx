@@ -11,8 +11,8 @@ export default function Experience() {
       role: "Fullstack Software Engineer",
       duration: ["2021", "present"],
       points: [
-        "Build frontend pages for a C2 system with Svelte",
-        "Built a mobile application via Flutter that supports the above mentioned C2 system via incident reporting.",
+        "Crafted intuitive and responsive frontend pages using Svelte to power a robust command and control system",
+        "Developed a feature-rich mobile application with Flutter, enabling users to efficiently report incidents and interact with the C2 system, enhancing operational efficiency and responsiveness.",
         "Wrote some backend services using Golang to support some of the frontend pages",
       ],
       skills: [
@@ -94,22 +94,19 @@ export default function Experience() {
             <td className="py-4 px-4 group-hover:text-teal-400 transition-colors duration-200 ease-in-out">
               {n.isWork ? <MdWork size={20} /> : <MdSchool size={20} />}
             </td>
-            <td className="py-4 xl:block min-w-24 hidden text-xs  uppercase text-slate-100/75 group-hover:text-teal-400 transition-colors duration-200 ease-in-out mx-4">
+            <td className="py-4 text-white xl:block min-w-24 hidden text-xs uppercase  group-hover:text-teal-400 transition-colors duration-200 ease-in-out mx-4">
               {n.duration[0]} - {n.duration[1]}
             </td>
             <td className="py-3 mx-4 px-2">
-              <h1 className="text-white group-hover:text-teal-400 transition-all duration-200 ease-in-out">
+              <h1 className="text-slate-100/75 font-semibold group-hover:text-teal-400 transition-all duration-200 ease-in-out">
                 {n.role} - {n.name}
               </h1>
-              <p className="text-xs py-1 mb-2 xl:hidden">
+              <p className="text-xs py-1 text-slate-100/75 mb-2 xl:hidden">
                 {n.duration[0]} - {n.duration[1]}
               </p>
               <ul className="px-4">
                 {n.points.map((p, index: number) => (
-                  <li
-                    key={index}
-                    className="text-slate-100/75 text-sm list-disc"
-                  >
+                  <li key={index} className="text-white text-sm list-disc">
                     {p}
                   </li>
                 ))}

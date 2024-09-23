@@ -9,15 +9,19 @@ const menu = [
   {
     label: "about",
     link: "about",
+    offset: 300,
   },
   {
     label: "experience",
     link: "experience",
+    offset: 300,
   },
 
   {
     label: "project",
     link: "project",
+    offset: 0,
+    disabled: true,
   },
 ];
 
@@ -25,7 +29,7 @@ const certifications = [
   {
     name: "Amazon Web Services Developer - Associate",
     subheader: "Amazon Web Services (AWS)",
-    points: ["Issued Dec 2023", "Credential ID SKGHHPGBSFF1QSWC"],
+    points: ["Issued Dec 2023", "Credential ID: SKGHHPGBSFF1QSWC"],
     url: "https://cp.certmetrics.com/amazon/en/public/verify/credential/SKGHHPGBSFF1QSWC",
   },
 ];
@@ -52,9 +56,10 @@ export default function Home() {
                 to={m.link}
                 spy={true}
                 smooth={true}
-                offset={-96}
+                offset={-1 * m.offset}
                 duration={500}
                 activeClass="active"
+                disabled={m.disabled}
               >
                 <li
                   className="my-4 flex items-center group hover:cursor-pointer"
@@ -63,7 +68,7 @@ export default function Home() {
                   <hr className="seperator transition-width duration-200 ease-in-out w-12 group-hover:w-24 mr-4 border-[1px] rounded" />
                   <span
                     className={`tracking-[0.15rem] 
-                    )}`}
+                    )} font-medium `}
                   >
                     {m.label}
                   </span>
@@ -80,22 +85,25 @@ export default function Home() {
           <a className="nav-links">
             <FaInstagram fontSize={24} />
           </a>
-          <a className="nav-links">
+          <a className="nav-links" target="_blank" href="https://www.linkedin.com/in/jaryl-ong-162ab2144/">
             <FaLinkedin fontSize={24} />
           </a>
         </footer>
       </div>
 
       <div className="xl:overflow-y-auto px-16" id="scroll-container">
-        <div className="pt-24 xl:w-3/4 xl:min-w-[500px] w-full mr-auto flex flex-col gap-24  text-slate-100/75">
+        <div className="pt-24 xl:w-3/4 xl:min-w-[500px] w-full mr-auto flex flex-col gap-24  text-slate-100/80">
           <section id="about" className="w-full p-4 flex gap-4 flex-col">
             <h1 className="uppercase tracking-wider text-base font-bold block xl:hidden">
               About
             </h1>
 
             <p>
-              Hello there, I'm Jaryl, a software engineer at ST Engineering.
-              I've been with the company for almost three years now.
+              <h1 className="inline xl:block xl:text-4xl xl:mb-2 xl:font-semibold">
+                Hello there,
+              </h1>{" "}
+              I'm Jaryl, a software engineer at ST Engineering. I've been with
+              the company for almost three years now.
             </p>
             <p className="">
               While my focus primarily centers around frontend work, I also
@@ -125,13 +133,13 @@ export default function Home() {
               >
                 <img src="./aws.png" className="w-16 my-auto" />
                 <div className="px-4 grow">
-                  <h1 className="group-hover:text-teal-400 transition-colors duration-200 ease-in-out text-white">
+                  <h1 className="group-hover:text-teal-400 transition-colors duration-200 ease-in-out font-semibold text-white">
                     {c.name}
                   </h1>
                   <h2>{c.subheader}</h2>
                   <ul>
                     {c.points.map((p: string, index: number) => (
-                      <li key={index} className="text-sm text-slate-100/75">
+                      <li key={index} className="text-sm text-slate-100/80">
                         {p}
                       </li>
                     ))}
@@ -153,8 +161,13 @@ export default function Home() {
             </h1>
             <Experience />
           </section>
-
-          <section id="project" className=""></section>
+          {/* 
+          <section id="project" className="p-4 flex flex-col gap-4">
+            <h1 className="uppercase tracking-wider text-base font-bold block xl:hidden">
+              Experience
+            </h1>
+            <Experience />
+          </section> */}
         </div>
       </div>
     </main>
