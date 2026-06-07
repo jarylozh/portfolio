@@ -117,6 +117,20 @@ export default function Home() {
             >
               LinkedIn
             </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              nativeButton={false}
+              render={
+                <a
+                  href="https://drive.google.com/file/d/1J_jxoRu1sfavhlySUaF1QZP6jIlsEDkC/view?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              }
+            >
+              Resume
+            </Button>
           </div>
 
           <div className="mt-4 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-foreground/10 pt-8 text-xs text-foreground/60 sm:mt-8 sm:gap-x-8 sm:grid-cols-4">
