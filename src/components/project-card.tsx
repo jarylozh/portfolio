@@ -10,6 +10,7 @@ type ProjectCardProps = {
   description: string;
   stack: string[];
   bullets: string[];
+  link?: string;
 };
 
 export function ProjectCard({
@@ -19,6 +20,7 @@ export function ProjectCard({
   description,
   stack,
   bullets,
+  link,
 }: ProjectCardProps) {
   const [expanded, setExpanded] = useState(false);
   const bulletsRef = useRef<HTMLDivElement>(null);
@@ -49,6 +51,17 @@ export function ProjectCard({
         <h3 className="text-2xl leading-tight sm:text-3xl">{name}</h3>
         <span className="text-xs text-foreground/60">{context}</span>
         <span className="text-xs text-foreground/50">{role}</span>
+        {link && (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 inline-flex w-fit items-center gap-1 text-xs uppercase tracking-wider text-foreground underline-offset-4 transition-opacity hover:underline hover:opacity-70"
+          >
+            {link.replace(/^https?:\/\//, "")}
+            <span aria-hidden>↗</span>
+          </a>
+        )}
       </div>
 
       <div className="flex flex-col md:col-span-8">

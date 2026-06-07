@@ -36,6 +36,7 @@ const education = [
     modules: [
       { name: "Architecting Scalable Systems", status: "Completed" },
       { name: "Distributed Modern Software Systems", status: "In Progress" },
+      { name: "Architecting AI Systems", status: "In Progress" },
     ],
   },
   {
@@ -51,6 +52,7 @@ const projects = [
     name: "Vault of Cards",
     context: "NUS MTech — Architecting Scalable Solutions",
     role: "Cloud Architect & Developer",
+    link: "https://dev.vaultofcards.io",
     description:
       "A full-stack web application for buying and selling trading card game collectibles. Users can browse and search listings, manage their own listings with image uploads, sign in with email-verified authentication, and message buyers and sellers in real time — all on a responsive frontend backed by a NestJS microservice deployed on AWS.",
     stack: ["Next.js", "NestJS", "AWS", "Docker", "GitHub Actions"],
