@@ -10,7 +10,7 @@ const buttonVariants = cva(
       variant: {
         default: "bg-foreground text-background hover:opacity-80",
         outline:
-          "border-foreground/20 bg-transparent hover:border-foreground/60 hover:text-foreground dark:border-foreground/20 dark:hover:border-foreground/60",
+          "border-foreground/20 bg-transparent text-foreground transition-colors duration-300 ease-out hover:border-foreground hover:bg-foreground hover:text-background dark:border-foreground/20 dark:hover:border-foreground dark:hover:bg-foreground dark:hover:text-background",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)]",
         ghost:
