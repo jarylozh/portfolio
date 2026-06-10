@@ -18,6 +18,7 @@ const sections = [
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Education", href: "#education" },
+  { label: "Certifications", href: "#certifications" },
 ];
 
 const NAV_OFFSET = 64;
@@ -47,13 +48,14 @@ export function SiteNav() {
                 <NavigationMenuLink
                   render={
                     <a
+                      className="text-foreground"
                       href={section.href}
                       onClick={handleNavClick(section.href)}
                     />
                   }
-                  className="rounded-none px-2 text-[0.7rem] uppercase tracking-[0.15em] text-foreground opacity-100 transition-[text-decoration] hover:bg-transparent hover:underline hover:underline-offset-4 focus:bg-transparent sm:px-3 sm:text-xs"
+                  className="rounded-none px-2 text-sm tracking-widest uppercase text-foreground font-heading transition-[text-decoration] hover:bg-transparent hover:underline hover:underline-offset-4 focus:bg-transparent sm:px-3 sm:text-base"
                 >
-                  {section.label}
+                  {section.label} 
                 </NavigationMenuLink>
               </NavigationMenuItem>
             ))}
