@@ -45,6 +45,8 @@ export function ProjectCard({
     }
   };
 
+  const hasBullets = bullets.length > 0;
+
   return (
     <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-12">
       <div className="flex flex-col gap-2 md:col-span-4">
@@ -56,47 +58,55 @@ export function ProjectCard({
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 inline-flex w-fit items-center gap-1 text-xs uppercase tracking-wider text-foreground underline-offset-4 transition-opacity hover:underline hover:opacity-70"
+            className="external-link mt-2"
           >
-            {link.replace(/^https?:\/\//, "")}
+            {name}
             <span aria-hidden>↗</span>
           </a>
         )}
       </div>
 
       <div className="flex flex-col md:col-span-8">
-        <div
-          role="button"
-          tabIndex={0}
-          aria-expanded={expanded}
-          onClick={toggle}
-          onKeyDown={handleKeyDown}
-          className="group/desc flex cursor-pointer flex-col gap-3 outline-none focus-visible:ring-2 focus-visible:ring-foreground/30"
-        >
+        {hasBullets ? (
+          <div
+            role="button"
+            tabIndex={0}
+            aria-expanded={expanded}
+            onClick={toggle}
+            onKeyDown={handleKeyDown}
+            className="group/desc flex cursor-pointer flex-col gap-3 outline-none focus-visible:ring-2 focus-visible:ring-foreground/30"
+          >
+            <p className="text-sm font-normal leading-relaxed text-foreground sm:text-base">
+              {description}
+            </p>
+            <span className="text-xs text-foreground/50 transition-colors group-hover/desc:text-foreground">
+              {expanded ? "− Hide my contributions" : "+ Show my contributions"}
+            </span>
+          </div>
+        ) : (
           <p className="text-sm font-normal leading-relaxed text-foreground sm:text-base">
             {description}
           </p>
-          <span className="text-xs text-foreground/50 transition-colors group-hover/desc:text-foreground">
-            {expanded ? "− Hide my contributions" : "+ Show my contributions"}
-          </span>
-        </div>
+        )}
 
-        <div
-          ref={bulletsRef}
-          className="overflow-hidden"
-          style={{ height: 0, opacity: 0 }}
-        >
-          <ul className="flexN flex-col gap-3 pt-6">
-            {bullets.map((bullet) => (
-              <li
-                key={bullet}
-                className="text-sm font-light leading-relaxed text-foreground sm:text-base"
-              >
-                {bullet}
-              </li>
-            ))}
-          </ul>
-        </div>
+        {hasBullets && (
+          <div
+            ref={bulletsRef}
+            className="overflow-hidden"
+            style={{ height: 0, opacity: 0 }}
+          >
+            <ul className="flex flex-col gap-3 pt-6">
+              {bullets.map((bullet) => (
+                <li
+                  key={bullet}
+                  className="text-sm font-light leading-relaxed text-foreground sm:text-base"
+                >
+                  {bullet}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         <div className="flex flex-wrap gap-2 pt-6">
           {stack.map((tech) => (

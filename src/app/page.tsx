@@ -31,7 +31,7 @@ const experience = [
 const education = [
   {
     institution: "National University of Singapore",
-    program: "Master of Technology — Stackable Graduate Programme",
+    program: "Master of Technology in Software Engineering",
     period: "Jul 2025 — Present",
     modules: [
       { name: "Architecting Scalable Systems", status: "Completed" },
@@ -47,6 +47,26 @@ const education = [
   },
 ];
 
+const certifications: {
+  name: string;
+  issuer: string;
+  period: string;
+  credentialUrl?: string;
+}[] = [
+  {
+    name: "AWS Certified Developer — Associate",
+    issuer: "Amazon Web Services",
+    period: "Dec 2023",
+    credentialUrl:
+      "https://cp.certmetrics.com/amazon/en/public/verify/credential/SKGHHPGBSFF1QSWC",
+  },
+  {
+    name: "Custom Generative AI Systems for Enterprises",
+    issuer: "National University of Singapore",
+    period: "Aug 2025",
+  },
+];
+
 const projects = [
   {
     name: "Vault of Cards",
@@ -57,22 +77,19 @@ const projects = [
       "A full-stack web application for buying and selling trading card game collectibles. Users can browse and search listings, manage their own listings with image uploads, sign in with email-verified authentication, and message buyers and sellers in real time — all on a responsive frontend backed by a NestJS microservice deployed on AWS.",
     stack: ["Next.js", "NestJS", "AWS", "Docker", "GitHub Actions"],
     bullets: [
-      "Developed a responsive Next.js frontend and automated GitHub Actions CI/CD pipelines to ensure rapid, zero-downtime application deployments.",
-      "Architected scalable, highly available AWS cloud infrastructure leveraging containerized microservices to handle high-traffic workloads.",
+      "Built the Next.js frontend and wired up GitHub Actions so every push deploys itself — no downtime, no manual steps.",
+      "Set up the AWS infrastructure with containerized microservices so the app stays fast and stays up, even when traffic spikes.",
     ],
   },
   {
     name: "Askbot",
     context: "Personal Project — LLM Framework Internals",
-    role: "Full-Stack Developer",
+    role: "Developer",
     link: "https://github.com/jarylozh/askbot",
     description:
       "A streaming chat-based Q&A application built to understand how LLM frameworks like LangChain work under the hood — implementing their core primitives such as response streaming, conversation memory, and prompt construction directly on the OpenAI SDK, behind a FastAPI backend and a Next.js frontend.",
-    stack: ["Next.js", "FastAPI", "OpenAI", "SQLite", "TypeScript"],
-    bullets: [
-      "Built end-to-end token streaming with FastAPI's StreamingResponse and a fetch ReadableStream reader, rendering assistant replies as live Markdown on the client.",
-      "Implemented conversation memory that summarizes recent messages and feeds the summary back into each reply's system prompt, replicating LangChain's summary-memory pattern.",
-    ],
+    stack: ["Next.js", "FastAPI", "OpenAI", "SQLite", "Typescript", "Python"],
+    bullets: [],
   },
 ];
 
@@ -210,7 +227,7 @@ export default function Home() {
                       {role.bullets.map((bullet) => (
                         <li
                           key={bullet}
-                          className="text-sm font-light leading-relaxed text-foreground sm:text-base"
+                          className="text-sm font-normal leading-relaxed text-foreground sm:text-base"
                         >
                           {bullet}
                         </li>
@@ -293,6 +310,65 @@ export default function Home() {
               </div>
             </FadeIn>
           ))}
+        </div>
+      </section>
+
+      <section
+        id="certifications"
+        className="px-5 py-20 sm:px-8 sm:py-28 md:px-12 lg:px-24 lg:py-32"
+      >
+        <div className="mx-auto flex w-full max-w-5xl flex-col gap-10 sm:gap-12">
+          <FadeIn className="flex flex-col gap-3 sm:gap-4">
+            <span className="text-xs text-foreground/50">
+              05 / Certifications
+            </span>
+            <h2 className="text-4xl leading-[0.95] sm:text-6xl md:text-7xl lg:text-8xl">
+              Certifications
+            </h2>
+          </FadeIn>
+
+          {certifications.length === 0 ? (
+            <FadeIn>
+              <p className="text-sm font-light leading-relaxed text-foreground/60 sm:text-base">
+                More to come.
+              </p>
+            </FadeIn>
+          ) : (
+            <div className="flex flex-col gap-6 sm:gap-8">
+              {certifications.map((cert) => (
+                <FadeIn
+                  key={cert.name}
+                  className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-12"
+                >
+                  <div className="flex flex-col gap-2 md:col-span-4">
+                    <h3 className="text-2xl leading-tight sm:text-3xl">
+                      {cert.issuer}
+                    </h3>
+                    <span className="text-xs text-foreground/50">
+                      {cert.period}
+                    </span>
+                    {cert.credentialUrl && (
+                      <a
+                        href={cert.credentialUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="external-link mt-2"
+                      >
+                        Verify credential
+                        <span aria-hidden>↗</span>
+                      </a>
+                    )}
+                  </div>
+
+                  <div className="flex flex-col md:col-span-8">
+                    <p className="text-sm font-normal uppercase leading-relaxed tracking-normal text-foreground sm:text-base">
+                      {cert.name}
+                    </p>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </>
