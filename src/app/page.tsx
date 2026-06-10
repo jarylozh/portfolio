@@ -61,6 +61,19 @@ const projects = [
       "Architected scalable, highly available AWS cloud infrastructure leveraging containerized microservices to handle high-traffic workloads.",
     ],
   },
+  {
+    name: "Askbot",
+    context: "Personal Project — LLM Framework Internals",
+    role: "Full-Stack Developer",
+    link: "https://github.com/jarylozh/askbot",
+    description:
+      "A streaming chat-based Q&A application built to understand how LLM frameworks like LangChain work under the hood — implementing their core primitives such as response streaming, conversation memory, and prompt construction directly on the OpenAI SDK, behind a FastAPI backend and a Next.js frontend.",
+    stack: ["Next.js", "FastAPI", "OpenAI", "SQLite", "TypeScript"],
+    bullets: [
+      "Built end-to-end token streaming with FastAPI's StreamingResponse and a fetch ReadableStream reader, rendering assistant replies as live Markdown on the client.",
+      "Implemented conversation memory that summarizes recent messages and feeds the summary back into each reply's system prompt, replicating LangChain's summary-memory pattern.",
+    ],
+  },
 ];
 
 export default function Home() {
